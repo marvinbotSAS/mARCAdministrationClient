@@ -1,0 +1,97 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package marcadministrationclient;
+
+import edu.uci.ics.jung.graph.Graph;
+import edu.uci.ics.jung.graph.util.EdgeIndexFunction;
+import edu.uci.ics.jung.graph.util.Pair;
+import edu.uci.ics.jung.visualization.decorators.AbstractEdgeShapeTransformer;
+import edu.uci.ics.jung.visualization.decorators.EdgeShape;
+import java.awt.Shape;
+import java.awt.geom.Path2D;
+
+/**
+ *
+ * @author patrice
+ */
+public class MyEdgeShape extends EdgeShape
+{
+    
+    /**
+     * An edge shape that renders as a bent-line between the
+     * vertex endpoints.
+     */
+    public static class BentLine<V,E> 
+             extends AbstractEdgeShapeTransformer<V,E> implements IndexedRendering<V,E> {
+        
+        /**
+         * singleton instance of the BentLine shape
+         */
+       // private static GeneralPath instance = new GeneralPath();
+        
+        private static Path2D instance = new Path2D.Double();
+        
+        protected EdgeIndexFunction<V,E> parallelEdgeIndexFunction;
+
+        @SuppressWarnings("unchecked")
+		public void setEdgeIndexFunction(EdgeIndexFunction<V,E> parallelEdgeIndexFunction) {
+            this.parallelEdgeIndexFunction = parallelEdgeIndexFunction;
+            loop.setEdgeIndexFunction(parallelEdgeIndexFunction);
+        }
+        
+        
+
+        /**
+		 * @return the parallelEdgeIndexFunction
+		 */
+		public EdgeIndexFunction<V, E> getEdgeIndexFunction() {
+			return parallelEdgeIndexFunction;
+		}
+
+
+
+		/**
+         * Get the shape for this edge, returning either the
+         * shared instance or, in the case of self-loop edges, the
+         * Loop shared instance.
+         */
+        @SuppressWarnings("unchecked")
+		public Shape transform(edu.uci.ics.jung.graph.util.Context<Graph<V,E>,E> context) {
+        	Graph<V,E> graph = context.graph;
+        	E e = context.element;
+            Pair<V> endpoints = graph.getEndpoints(e);
+            if(endpoints != null) {
+            	boolean isLoop = endpoints.getFirst().equals(endpoints.getSecond());
+            	if (isLoop) {
+            		return loop.transform(context);
+            	}
+            }
+            
+            boolean isClosed = graph.findEdge(endpoints.getSecond(), endpoints.getFirst()) != null ;
+            int index = 1;
+            if(parallelEdgeIndexFunction != null) {
+                index = parallelEdgeIndexFunction.getIndex(graph, e);
+            }
+            float controlY = control_offset_increment + control_offset_increment*index;
+            instance.reset();
+            instance.moveTo(0.0f, 0.0f);
+            if ( isClosed) // v1->v2 et v2->v1 : une courbe de bezier
+            {
+                instance.curveTo(0.0f, 0.0f, 0.5f, controlY, 1.f,1.f);
+            }
+            else // sinon une ligne
+            {
+              // instance.lineTo(0.5f, controlY);
+               instance.lineTo(1.0f, 1.0f);
+            }
+
+            return instance;
+        }
+
+    }
+    
+}
+

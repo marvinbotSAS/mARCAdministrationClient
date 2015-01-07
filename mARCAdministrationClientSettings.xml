@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Servers>
+  <Server>
+    <isConnected>true</isConnected>
+    <isCurrentServer>true</isCurrentServer>
+    <Name>toto</Name>
+    <IP>127.0.0.1</IP>
+    <Port>6666</Port>
+    <WindowSplitDividerLocation>11</WindowSplitDividerLocation>
+    <SessionsTasksSplitDividerlocation>-1</SessionsTasksSplitDividerlocation>
+    <ServerInternalSplitDividerLocation>-1</ServerInternalSplitDividerLocation>
+    <SelectedTableIndex>0</SelectedTableIndex>
+    <CurrentSessionIndex>2</CurrentSessionIndex>
+    <CurrentTableName>Eudata</CurrentTableName>
+    <selectedFields length="3"/>
+    <selectedFieldsN0>titre</selectedFieldsN0>
+    <selectedFieldsN1>soustitre</selectedFieldsN1>
+    <selectedFieldsN2>texte</selectedFieldsN2>
+    <TableContentDividerLocation>83</TableContentDividerLocation>
+    <TableContentTextAreaDividerLocation>150</TableContentTextAreaDividerLocation>
+    <TableContentShownRowId>-1</TableContentShownRowId>
+    <TableContentSize>20</TableContentSize>
+    <TableContentSliderValue>1</TableContentSliderValue>
+    <TableContentStart>1</TableContentStart>
+    <firstTableContentVisibleRow>0</firstTableContentVisibleRow>
+    <lastTableContentVisibleRow>0</lastTableContentVisibleRow>
+    <tablesDividerLocation>457</tablesDividerLocation>
+    <FieldsTableColumnsWidths length="3"/>
+    <FieldsTableColumnsWidthsN0>129</FieldsTableColumnsWidthsN0>
+    <FieldsTableColumnsWidthsN1>129</FieldsTableColumnsWidthsN1>
+    <FieldsTableColumnsWidthsN2>128</FieldsTableColumnsWidthsN2>
+    <sessionsTablecolumnsWidths length="9"/>
+    <sessionsTablecolumnsWidthsN0>136</sessionsTablecolumnsWidthsN0>
+    <sessionsTablecolumnsWidthsN1>136</sessionsTablecolumnsWidthsN1>
+    <sessionsTablecolumnsWidthsN2>136</sessionsTablecolumnsWidthsN2>
+    <sessionsTablecolumnsWidthsN3>136</sessionsTablecolumnsWidthsN3>
+    <sessionsTablecolumnsWidthsN4>135</sessionsTablecolumnsWidthsN4>
+    <sessionsTablecolumnsWidthsN5>136</sessionsTablecolumnsWidthsN5>
+    <sessionsTablecolumnsWidthsN6>135</sessionsTablecolumnsWidthsN6>
+    <sessionsTablecolumnsWidthsN7>136</sessionsTablecolumnsWidthsN7>
+    <sessionsTablecolumnsWidthsN8>135</sessionsTablecolumnsWidthsN8>
+    <tasksTablecolumnsWidths length="6"/>
+    <tasksTablecolumnsWidthsN0>205</tasksTablecolumnsWidthsN0>
+    <tasksTablecolumnsWidthsN1>204</tasksTablecolumnsWidthsN1>
+    <tasksTablecolumnsWidthsN2>205</tasksTablecolumnsWidthsN2>
+    <tasksTablecolumnsWidthsN3>204</tasksTablecolumnsWidthsN3>
+    <tasksTablecolumnsWidthsN4>205</tasksTablecolumnsWidthsN4>
+    <tasksTablecolumnsWidthsN5>204</tasksTablecolumnsWidthsN5>
+    <ContentTablecolumnsWidths length="4"/>
+    <ContentTablecolumnsWidthsN0>222</ContentTablecolumnsWidthsN0>
+    <ContentTablecolumnsWidthsN1>221</ContentTablecolumnsWidthsN1>
+    <ContentTablecolumnsWidthsN2>222</ContentTablecolumnsWidthsN2>
+    <ContentTablecolumnsWidthsN3>221</ContentTablecolumnsWidthsN3>
+    <BTreesColumnsWidths length="4"/>
+    <BTreesColumnsWidthsN0>160</BTreesColumnsWidthsN0>
+    <BTreesColumnsWidthsN1>159</BTreesColumnsWidthsN1>
+    <BTreesColumnsWidthsN2>160</BTreesColumnsWidthsN2>
+    <BTreesColumnsWidthsN3>159</BTreesColumnsWidthsN3>
+    <KTreesColumnsWidths length="3"/>
+    <KTreesColumnsWidthsN0>213</KTreesColumnsWidthsN0>
+    <KTreesColumnsWidthsN1>213</KTreesColumnsWidthsN1>
+    <KTreesColumnsWidthsN2>212</KTreesColumnsWidthsN2>
+    <LDBTableColumnsWidths length="4"/>
+    <LDBTableColumnsWidthsN0>160</LDBTableColumnsWidthsN0>
+    <LDBTableColumnsWidthsN1>160</LDBTableColumnsWidthsN1>
+    <LDBTableColumnsWidthsN2>160</LDBTableColumnsWidthsN2>
+    <LDBTableColumnsWidthsN3>160</LDBTableColumnsWidthsN3>
+    <LDBTreesDividerLocation>137</LDBTreesDividerLocation>
+    <RSformat>RowId</RSformat>
+    <InternalFrame>
+      <Name>ResultSet Properties</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>120</locationX>
+      <locationY>120</locationY>
+      <widht>300</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>Table Vizualisation</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>226</locationX>
+      <locationY>395</locationY>
+      <widht>625</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>Tables</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>669</locationX>
+      <locationY>245</locationY>
+      <widht>643</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>Session</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>true</isSelected>
+      <locationX>338</locationX>
+      <locationY>137</locationY>
+      <widht>549</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>Scripts</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>100</locationX>
+      <locationY>100</locationY>
+      <widht>300</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>Context Properties</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>80</locationX>
+      <locationY>80</locationY>
+      <widht>300</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>Contexts</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>678</locationX>
+      <locationY>66</locationY>
+      <widht>300</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>Results</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>10</locationX>
+      <locationY>10</locationY>
+      <widht>300</widht>
+      <height>300</height>
+    </InternalFrame>
+    <InternalFrame>
+      <Name>ResultSet Content</Name>
+      <isIcon>false</isIcon>
+      <isMaximized>false</isMaximized>
+      <isSelected>false</isSelected>
+      <locationX>90</locationX>
+      <locationY>90</locationY>
+      <widht>300</widht>
+      <height>300</height>
+    </InternalFrame>
+    <Session>
+      <RSstackDividerLocation>250</RSstackDividerLocation>
+      <ResulSetPropertiesColumnsWidths length="4"/>
+      <ResulSetPropertiesColumnsWidthsN0>64</ResulSetPropertiesColumnsWidthsN0>
+      <ResulSetPropertiesColumnsWidthsN1>63</ResulSetPropertiesColumnsWidthsN1>
+      <ResulSetPropertiesColumnsWidthsN2>64</ResulSetPropertiesColumnsWidthsN2>
+      <ResulSetPropertiesColumnsWidthsN3>63</ResulSetPropertiesColumnsWidthsN3>
+      <contextContentColumnsWidhts length="5"/>
+      <contextContentColumnsWidhtsN0>15</contextContentColumnsWidhtsN0>
+      <contextContentColumnsWidhtsN1>15</contextContentColumnsWidhtsN1>
+      <contextContentColumnsWidhtsN2>15</contextContentColumnsWidhtsN2>
+      <contextContentColumnsWidhtsN3>15</contextContentColumnsWidhtsN3>
+      <contextContentColumnsWidhtsN4>15</contextContentColumnsWidhtsN4>
+      <contextPropertiesColumnsWidths length="4"/>
+      <contextPropertiesColumnsWidthsN0>64</contextPropertiesColumnsWidthsN0>
+      <contextPropertiesColumnsWidthsN1>63</contextPropertiesColumnsWidthsN1>
+      <contextPropertiesColumnsWidthsN2>64</contextPropertiesColumnsWidthsN2>
+      <contextPropertiesColumnsWidthsN3>63</contextPropertiesColumnsWidthsN3>
+      <sessionPropertiesTableColumnsWidhts length="4"/>
+      <sessionPropertiesTableColumnsWidhtsN0>15</sessionPropertiesTableColumnsWidhtsN0>
+      <sessionPropertiesTableColumnsWidhtsN1>15</sessionPropertiesTableColumnsWidhtsN1>
+      <sessionPropertiesTableColumnsWidhtsN2>15</sessionPropertiesTableColumnsWidhtsN2>
+      <sessionPropertiesTableColumnsWidhtsN3>15</sessionPropertiesTableColumnsWidhtsN3>
+      <sessionSpectrumTableColumnsWidhts length="3"/>
+      <sessionSpectrumTableColumnsWidhtsN0>133</sessionSpectrumTableColumnsWidhtsN0>
+      <sessionSpectrumTableColumnsWidhtsN1>134</sessionSpectrumTableColumnsWidhtsN1>
+      <sessionSpectrumTableColumnsWidhtsN2>133</sessionSpectrumTableColumnsWidhtsN2>
+      <ResultsAmplifyB>0</ResultsAmplifyB>
+      <ResultsAmplifySlope>1</ResultsAmplifySlope>
+      <ResultsNormalizeItemIndex>0</ResultsNormalizeItemIndex>
+      <ResultsSortByFieldItemIndex>-1</ResultsSortByFieldItemIndex>
+      <ResultsSortByOrderItemIndex>0</ResultsSortByOrderItemIndex>
+      <ResultsUniqueByItemIndex>-1</ResultsUniqueByItemIndex>
+      <SelectFromTableFieldItemIndex>-1</SelectFromTableFieldItemIndex>
+      <SelectFromTableModeItemIndex>0</SelectFromTableModeItemIndex>
+      <selectToTableDestinationTableNameItem>none</selectToTableDestinationTableNameItem>
+      <SelectToTableFieldItemIndex>-1</SelectToTableFieldItemIndex>
+      <SelectToTableUnique>false</SelectToTableUnique>
+      <contextAmplifyB>0</contextAmplifyB>
+      <contextAmplifySlope>1</contextAmplifySlope>
+      <contextIntersectionItemIndex>0</contextIntersectionItemIndex>
+      <contextNormalizeItemIndex>0</contextNormalizeItemIndex>
+      <contextSortByFieldItemIndex>0</contextSortByFieldItemIndex>
+      <contextSortByOrderItemIndex>0</contextSortByOrderItemIndex>
+      <contextUnionItemIndex>0</contextUnionItemIndex>
+      <ctxStackAndContentDividerlocation>150</ctxStackAndContentDividerlocation>
+      <ctxStaskDividerlocation>343</ctxStaskDividerlocation>
+    </Session>
+    <Session>
+      <RSstackDividerLocation>250</RSstackDividerLocation>
+      <ResulSetPropertiesColumnsWidths length="4"/>
+      <ResulSetPropertiesColumnsWidthsN0>64</ResulSetPropertiesColumnsWidthsN0>
+      <ResulSetPropertiesColumnsWidthsN1>63</ResulSetPropertiesColumnsWidthsN1>
+      <ResulSetPropertiesColumnsWidthsN2>64</ResulSetPropertiesColumnsWidthsN2>
+      <ResulSetPropertiesColumnsWidthsN3>63</ResulSetPropertiesColumnsWidthsN3>
+      <contextContentColumnsWidhts length="5"/>
+      <contextContentColumnsWidhtsN0>15</contextContentColumnsWidhtsN0>
+      <contextContentColumnsWidhtsN1>15</contextContentColumnsWidhtsN1>
+      <contextContentColumnsWidhtsN2>15</contextContentColumnsWidhtsN2>
+      <contextContentColumnsWidhtsN3>15</contextContentColumnsWidhtsN3>
+      <contextContentColumnsWidhtsN4>15</contextContentColumnsWidhtsN4>
+      <contextPropertiesColumnsWidths length="4"/>
+      <contextPropertiesColumnsWidthsN0>64</contextPropertiesColumnsWidthsN0>
+      <contextPropertiesColumnsWidthsN1>63</contextPropertiesColumnsWidthsN1>
+      <contextPropertiesColumnsWidthsN2>64</contextPropertiesColumnsWidthsN2>
+      <contextPropertiesColumnsWidthsN3>63</contextPropertiesColumnsWidthsN3>
+      <sessionPropertiesTableColumnsWidhts length="4"/>
+      <sessionPropertiesTableColumnsWidhtsN0>50</sessionPropertiesTableColumnsWidhtsN0>
+      <sessionPropertiesTableColumnsWidhtsN1>50</sessionPropertiesTableColumnsWidhtsN1>
+      <sessionPropertiesTableColumnsWidhtsN2>51</sessionPropertiesTableColumnsWidhtsN2>
+      <sessionPropertiesTableColumnsWidhtsN3>50</sessionPropertiesTableColumnsWidhtsN3>
+      <sessionSpectrumTableColumnsWidhts length="3"/>
+      <sessionSpectrumTableColumnsWidhtsN0>86</sessionSpectrumTableColumnsWidhtsN0>
+      <sessionSpectrumTableColumnsWidhtsN1>87</sessionSpectrumTableColumnsWidhtsN1>
+      <sessionSpectrumTableColumnsWidhtsN2>86</sessionSpectrumTableColumnsWidhtsN2>
+      <ResultsAmplifyB>0</ResultsAmplifyB>
+      <ResultsAmplifySlope>1</ResultsAmplifySlope>
+      <ResultsNormalizeItemIndex>0</ResultsNormalizeItemIndex>
+      <ResultsSortByFieldItemIndex>-1</ResultsSortByFieldItemIndex>
+      <ResultsSortByOrderItemIndex>0</ResultsSortByOrderItemIndex>
+      <ResultsUniqueByItemIndex>-1</ResultsUniqueByItemIndex>
+      <SelectFromTableFieldItemIndex>-1</SelectFromTableFieldItemIndex>
+      <SelectFromTableModeItemIndex>0</SelectFromTableModeItemIndex>
+      <selectToTableDestinationTableNameItem>Eudata</selectToTableDestinationTableNameItem>
+      <SelectToTableFieldItemIndex>-1</SelectToTableFieldItemIndex>
+      <SelectToTableUnique>false</SelectToTableUnique>
+      <contextAmplifyB>0</contextAmplifyB>
+      <contextAmplifySlope>1</contextAmplifySlope>
+      <contextIntersectionItemIndex>0</contextIntersectionItemIndex>
+      <contextNormalizeItemIndex>0</contextNormalizeItemIndex>
+      <contextSortByFieldItemIndex>0</contextSortByFieldItemIndex>
+      <contextSortByOrderItemIndex>0</contextSortByOrderItemIndex>
+      <contextUnionItemIndex>0</contextUnionItemIndex>
+      <ctxStackAndContentDividerlocation>150</ctxStackAndContentDividerlocation>
+      <ctxStaskDividerlocation>343</ctxStaskDividerlocation>
+    </Session>
+    <Session>
+      <Spectrum value="1">min_atom</Spectrum>
+      <Spectrum value="100">max_atom</Spectrum>
+      <Spectrum value="0">min_generality</Spectrum>
+      <Spectrum value="0">max_generality</Spectrum>
+      <Spectrum value="1">min_activity</Spectrum>
+      <Spectrum value="-1">max_activity</Spectrum>
+      <Spectrum value="5">max_context</Spectrum>
+      <Spectrum value="25">min_context_size</Spectrum>
+      <Spectrum value="25">max_context_size</Spectrum>
+      <Spectrum value="25">min_context_activity</Spectrum>
+      <Spectrum value="-1">max_context_activity</Spectrum>
+      <Spectrum value="1000">max_record</Spectrum>
+      <Spectrum value="8">depth</Spectrum>
+      <Spectrum value="false">evaluate</Spectrum>
+      <RSstackDividerLocation>250</RSstackDividerLocation>
+      <ResulSetPropertiesColumnsWidths length="4"/>
+      <ResulSetPropertiesColumnsWidthsN0>64</ResulSetPropertiesColumnsWidthsN0>
+      <ResulSetPropertiesColumnsWidthsN1>63</ResulSetPropertiesColumnsWidthsN1>
+      <ResulSetPropertiesColumnsWidthsN2>64</ResulSetPropertiesColumnsWidthsN2>
+      <ResulSetPropertiesColumnsWidthsN3>63</ResulSetPropertiesColumnsWidthsN3>
+      <contextContentColumnsWidhts length="5"/>
+      <contextContentColumnsWidhtsN0>15</contextContentColumnsWidhtsN0>
+      <contextContentColumnsWidhtsN1>15</contextContentColumnsWidhtsN1>
+      <contextContentColumnsWidhtsN2>15</contextContentColumnsWidhtsN2>
+      <contextContentColumnsWidhtsN3>15</contextContentColumnsWidhtsN3>
+      <contextContentColumnsWidhtsN4>15</contextContentColumnsWidhtsN4>
+      <contextPropertiesColumnsWidths length="4"/>
+      <contextPropertiesColumnsWidthsN0>64</contextPropertiesColumnsWidthsN0>
+      <contextPropertiesColumnsWidthsN1>63</contextPropertiesColumnsWidthsN1>
+      <contextPropertiesColumnsWidthsN2>64</contextPropertiesColumnsWidthsN2>
+      <contextPropertiesColumnsWidthsN3>63</contextPropertiesColumnsWidthsN3>
+      <sessionPropertiesTableColumnsWidhts length="4"/>
+      <sessionPropertiesTableColumnsWidhtsN0>15</sessionPropertiesTableColumnsWidhtsN0>
+      <sessionPropertiesTableColumnsWidhtsN1>15</sessionPropertiesTableColumnsWidhtsN1>
+      <sessionPropertiesTableColumnsWidhtsN2>15</sessionPropertiesTableColumnsWidhtsN2>
+      <sessionPropertiesTableColumnsWidhtsN3>15</sessionPropertiesTableColumnsWidhtsN3>
+      <sessionSpectrumTableColumnsWidhts length="3"/>
+      <sessionSpectrumTableColumnsWidhtsN0>163</sessionSpectrumTableColumnsWidhtsN0>
+      <sessionSpectrumTableColumnsWidhtsN1>163</sessionSpectrumTableColumnsWidhtsN1>
+      <sessionSpectrumTableColumnsWidhtsN2>162</sessionSpectrumTableColumnsWidhtsN2>
+      <ResultsAmplifyB>0</ResultsAmplifyB>
+      <ResultsAmplifySlope>1</ResultsAmplifySlope>
+      <ResultsNormalizeItemIndex>0</ResultsNormalizeItemIndex>
+      <ResultsSortByFieldItemIndex>-1</ResultsSortByFieldItemIndex>
+      <ResultsSortByOrderItemIndex>0</ResultsSortByOrderItemIndex>
+      <ResultsUniqueByItemIndex>-1</ResultsUniqueByItemIndex>
+      <SelectFromTableFieldItemIndex>-1</SelectFromTableFieldItemIndex>
+      <SelectFromTableModeItemIndex>0</SelectFromTableModeItemIndex>
+      <selectToTableDestinationTableNameItem>Eudata</selectToTableDestinationTableNameItem>
+      <SelectToTableFieldItemIndex>-1</SelectToTableFieldItemIndex>
+      <SelectToTableUnique>false</SelectToTableUnique>
+      <contextAmplifyB>0</contextAmplifyB>
+      <contextAmplifySlope>1</contextAmplifySlope>
+      <contextIntersectionItemIndex>0</contextIntersectionItemIndex>
+      <contextNormalizeItemIndex>0</contextNormalizeItemIndex>
+      <contextSortByFieldItemIndex>0</contextSortByFieldItemIndex>
+      <contextSortByOrderItemIndex>0</contextSortByOrderItemIndex>
+      <contextUnionItemIndex>0</contextUnionItemIndex>
+      <ctxStackAndContentDividerlocation>150</ctxStackAndContentDividerlocation>
+      <ctxStaskDividerlocation>343</ctxStaskDividerlocation>
+    </Session>
+  </Server>
+</Servers>
