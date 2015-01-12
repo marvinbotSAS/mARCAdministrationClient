@@ -1264,22 +1264,30 @@ this.tasksjTable.setShowVerticalLines(true);
         );
 
         jPanelMainWindow.setBackground(new java.awt.Color(0, 0, 0));
-        jPanelMainWindow.setMaximumSize(new java.awt.Dimension(2560, 1600));
-        jPanelMainWindow.setMinimumSize(new java.awt.Dimension(2560, 100));
-        jPanelMainWindow.setPreferredSize(new java.awt.Dimension(2560, 1600));
+        jPanelMainWindow.setMaximumSize(new java.awt.Dimension(1600, 1200));
+        jPanelMainWindow.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelMainWindow.setPreferredSize(new java.awt.Dimension(1600, 1200));
 
         jScrollPane15.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane15.setMaximumSize(new java.awt.Dimension(1600, 1200));
+        jScrollPane15.setPreferredSize(new java.awt.Dimension(1600, 1200));
 
         jPanel31.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel31.setMaximumSize(new java.awt.Dimension(1600, 1200));
+        jPanel31.setPreferredSize(new java.awt.Dimension(1600, 1200));
 
         MainWindowjSplitPane.setBackground(new java.awt.Color(0, 0, 0));
         MainWindowjSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+        MainWindowjSplitPane.setMaximumSize(new java.awt.Dimension(1600, 1200));
+        MainWindowjSplitPane.setMinimumSize(new java.awt.Dimension(0, 0));
+        MainWindowjSplitPane.setPreferredSize(new java.awt.Dimension(1600, 1200));
 
         CurrentServerjPanel.setBackground(new java.awt.Color(0, 0, 0));
         CurrentServerjPanel.setForeground(new java.awt.Color(51, 255, 0));
-        CurrentServerjPanel.setMaximumSize(new java.awt.Dimension(2538, 100));
-        CurrentServerjPanel.setMinimumSize(new java.awt.Dimension(2538, 10));
+        CurrentServerjPanel.setMaximumSize(new java.awt.Dimension(1600, 1200));
+        CurrentServerjPanel.setMinimumSize(new java.awt.Dimension(0, 0));
         CurrentServerjPanel.setOpaque(false);
+        CurrentServerjPanel.setPreferredSize(new java.awt.Dimension(1600, 1200));
         CurrentServerjPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 CurrentServerjPanelComponentHidden(evt);
@@ -2200,20 +2208,26 @@ this.tasksjTable.setShowVerticalLines(true);
 
         MainWindowjSplitPane.setTopComponent(CurrentServerjPanel);
 
+        jPanel46.setMaximumSize(new java.awt.Dimension(1600, 1200));
+        jPanel46.setPreferredSize(new java.awt.Dimension(1600, 1200));
+
         jScrollPane22.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane22.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane22.setMaximumSize(new java.awt.Dimension(1600, 1200));
+        jScrollPane22.setPreferredSize(new java.awt.Dimension(1600, 1200));
 
-        jDesktopPane.setMaximumSize(new java.awt.Dimension(2526, 1460));
+        jDesktopPane.setMaximumSize(new java.awt.Dimension(1920, 1200));
+        jDesktopPane.setPreferredSize(new java.awt.Dimension(1920, 1200));
 
         javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
         jDesktopPane.setLayout(jDesktopPaneLayout);
         jDesktopPaneLayout.setHorizontalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2616, Short.MAX_VALUE)
+            .addGap(0, 2599, Short.MAX_VALUE)
         );
         jDesktopPaneLayout.setVerticalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1550, Short.MAX_VALUE)
+            .addGap(0, 1200, Short.MAX_VALUE)
         );
 
         jScrollPane22.setViewportView(jDesktopPane);
@@ -2223,12 +2237,12 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel46Layout.createSequentialGroup()
-                .addComponent(jScrollPane22)
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane22)
+            .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
         );
 
         MainWindowjSplitPane.setBottomComponent(jPanel46);
@@ -2237,7 +2251,7 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainWindowjSplitPane)
+            .addComponent(MainWindowjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3543,7 +3557,6 @@ this.tasksjTable.setShowVerticalLines(true);
         setTitle("mARC Administration Client");
         setMaximumSize(new java.awt.Dimension(1200, 1000));
         setName("MainFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1200, 842));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);

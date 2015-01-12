@@ -115,27 +115,27 @@ public class UpdateTableContentWorker extends SwingWorker<Void,Void>
                         }
                 }
                 // on recupere les lignes de tous les champs hors KNW_ABSTRACT
-                for (int i = start; i < end ;i++ )
+                for (int ii = start; ii < end ;ii++ )
                 {
-                    connector.TABLE_ReadLine(table.name, String.valueOf(i) , nf);
+                    connector.TABLE_ReadLine(table.name, String.valueOf(ii) , nf);
                     // on lit le champs KNW_ABSTRACT du doc i
-                    connector.SESSION_DocToContext(String.valueOf(i), "false");
+                    connector.SESSION_DocToContext(String.valueOf(ii), "false");
                     connector.CONTEXTS_Fetch("2000", "1", "1");
                     connector.CONTEXTS_Drop("1");
                 }
                 connector.executeScript();
                 this.lines = new String[this.fields.length][this.size];
                 int ReadLine_index = 0;
-                for (int i = 0; i < fields.length;i++)
+                for (int ij = 0; ij < fields.length;ij++)
                 {
-                    if ( i == abstractFielIndex )
+                    if ( ij == abstractFielIndex )
                     {
                         continue;
                     }
                     ReadLine_index = 0;
                     for(int j = 0; j < size ; j++)
                     {
-                        lines[i][j] = connector.getDataByName(fields[i], ReadLine_index)[0];
+                        lines[ij][j] = connector.getDataByName(fields[ij], ReadLine_index)[0];
                         ReadLine_index += 4;
                     }
                 }
@@ -147,7 +147,7 @@ public class UpdateTableContentWorker extends SwingWorker<Void,Void>
                     {
                         s = connector.getDataByName("shape", ReadLine_index);
                         Abstract = "";
-                        for (k = 0; k < shapes.length;k++)
+                        for (k = 0; k < s.length;k++)
                         {
                              Abstract += s[k]+", ";
                         }
