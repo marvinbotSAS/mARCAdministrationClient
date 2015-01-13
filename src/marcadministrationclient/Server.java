@@ -435,7 +435,6 @@ public class Server {
         }
         // table visualizer frame
         this._frame.UpdateTableContent(true);
-        this._frame.ShowTableContentRowId();
         
         this.showTables = this._frame.TablesjTable.getRowCount() != 0;
        

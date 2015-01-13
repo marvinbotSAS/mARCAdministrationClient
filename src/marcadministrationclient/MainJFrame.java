@@ -5075,20 +5075,33 @@ this.tasksjTable.setShowVerticalLines(true);
         this.UpdateTableContent(false);
     }//GEN-LAST:event_TableLinesjSliderMouseReleased
 
-    public void ShowTableContentRowId()
+        public void ShowTableContentRowId()
     {
         if ( this.ContentjTable.getRowCount() == 0 )
         {
             return;
         }
          DefaultTableModel m = (DefaultTableModel) ContentjTable.getModel();
-         int row = ContentjTable.getSelectedRow();
+         if ( this.shownTableContentRowId.equals("-1") )
+         {
+             return;
+         }
+         //on transcrit en row de la table
+         int row = -1;
+         for (int ii = 0; ii<m.getRowCount();ii++)
+         {
+             String rs = (String) m.getValueAt(ii, 0);
+             if ( rs.equals(this.shownTableContentRowId))
+             {
+                 row = (int) Integer.valueOf( rs );
+                 break;
+             }
+         }
          if ( row == -1)
          {
              return;
          }
-         //on transcrit en RowId de la table
-         this.shownTableContentRowId = (String) m.getValueAt(row, 0);
+         
          String tablename = CurrentTable.name;
          int colid = ContentjTable.getSelectedColumn();
          String field = ContentjTable.getColumnName(colid);
@@ -5114,6 +5127,45 @@ this.tasksjTable.setShowVerticalLines(true);
              w.execute();
          }
     }
+//    public void ShowTableContentRowId()
+//    {
+//        if ( this.ContentjTable.getRowCount() == 0 )
+//        {
+//            return;
+//        }
+//         DefaultTableModel m = (DefaultTableModel) ContentjTable.getModel();
+//         int row = ContentjTable.getSelectedRow();
+//         if ( row == -1)
+//         {
+//             return;
+//         }
+//         //on transcrit en RowId de la table
+//         this.shownTableContentRowId = (String) m.getValueAt(row, 0);
+//         String tablename = CurrentTable.name;
+//         int colid = ContentjTable.getSelectedColumn();
+//         String field = ContentjTable.getColumnName(colid);
+//         TableField tf = CurrentTable.FindTableFieldFromName(field);
+//
+//         if (!tf.type.equals("STRING") && !tf.type.contains("ABSTRACT")) 
+//         {
+//             ContentTablejTextArea.setText((String) m.getValueAt(row, colid));
+//
+//         }
+//         if (tf.type.contains("ABSTRACT")) 
+//         {
+//         ContentTablejTextArea.setText((String) m.getValueAt(row, colid));
+//         }
+//         if (tf.type.equals("STRING")) 
+//         {
+//             ContentTableReadBlockWorker w = new ContentTableReadBlockWorker();
+//             w.server = CurrentServer;
+//             w.field = field;
+//             w.rowid = shownTableContentRowId;
+//             w._frame = this;
+//             w.tablename = tablename;
+//             w.execute();
+//         }
+//    }
     private void ContentjTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ContentjTableMouseReleased
 
         if ( CurrentTable == null )
@@ -5130,6 +5182,8 @@ this.tasksjTable.setShowVerticalLines(true);
             
             if ( ContentjTable.getSelectedRows().length == 1 )
             {
+                
+                this.shownTableContentRowId = String.valueOf(this.ContentjTable.getSelectedRow());
                 this.ShowTableContentRowId();
             }
         }
@@ -7581,7 +7635,7 @@ this.tasksjTable.setShowVerticalLines(true);
 
 
         this.CurrentServer.PopTableContentFrameSettings();
-
+        this.ShowTableContentRowId();
         this.ContentjTable.setEnabled(true);
     }
     
