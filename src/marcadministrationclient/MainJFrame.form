@@ -231,8 +231,8 @@
         <Property name="visible" type="boolean" value="true"/>
       </Properties>
       <Events>
-        <EventHandler event="internalFrameActivated" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="TablesjInternalFrameInternalFrameActivated"/>
         <EventHandler event="internalFrameDeactivated" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="TablesjInternalFrameInternalFrameDeactivated"/>
+        <EventHandler event="internalFrameActivated" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="TablesjInternalFrameInternalFrameActivated"/>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="TablesjInternalFrameFocusGained"/>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="TablesjInternalFrameFocusLost"/>
       </Events>
@@ -671,8 +671,8 @@
         <Property name="visible" type="boolean" value="true"/>
       </Properties>
       <Events>
-        <EventHandler event="internalFrameActivated" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="TableVisualjInternalFrameInternalFrameActivated"/>
         <EventHandler event="internalFrameDeactivated" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="TableVisualjInternalFrameInternalFrameDeactivated"/>
+        <EventHandler event="internalFrameActivated" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="TableVisualjInternalFrameInternalFrameActivated"/>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="TableVisualjInternalFrameFocusGained"/>
       </Events>
 

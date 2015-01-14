@@ -5666,6 +5666,8 @@ this.tasksjTable.setShowVerticalLines(true);
 
                 
         CurrentServer.CurrentTable = this.CurrentTable;
+        
+        this.UpdateTableContent(false);
 
     }//GEN-LAST:event_TablesjInternalFrameInternalFrameDeactivated
 
