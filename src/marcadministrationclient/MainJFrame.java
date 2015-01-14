@@ -5091,7 +5091,7 @@ this.tasksjTable.setShowVerticalLines(true);
              String rs = (String) m.getValueAt(ii, 0);
              if ( rs.equals(this.shownTableContentRowId))
              {
-                 row = (int) Integer.valueOf( rs );
+                 row = ii;
                  break;
              }
          }
