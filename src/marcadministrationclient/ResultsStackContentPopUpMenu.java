@@ -101,7 +101,6 @@ public class ResultsStackContentPopUpMenu extends JPopupMenu implements ActionLi
 public void actionPerformed( ActionEvent e )
 {
              // determine which menu item was selected
-             JTable table = (JTable) getInvoker();
 
              if ( e.getActionCommand().equals(newItem.getActionCommand() ) )
              {

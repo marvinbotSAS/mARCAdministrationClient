@@ -545,13 +545,6 @@ this.tasksjTable.setShowVerticalLines(true);
         ServerCurrentSessionjInternalFrame.setPreferredSize(new java.awt.Dimension(526, 382));
         ServerCurrentSessionjInternalFrame.setVisible(true);
         ServerCurrentSessionjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                ServerCurrentSessionjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 ServerCurrentSessionjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -560,6 +553,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                ServerCurrentSessionjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -721,13 +721,6 @@ this.tasksjTable.setShowVerticalLines(true);
         TablesjInternalFrame.setPreferredSize(new java.awt.Dimension(500, 500));
         TablesjInternalFrame.setVisible(true);
         TablesjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                TablesjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 TablesjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -736,6 +729,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                TablesjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
         TablesjInternalFrame.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1023,13 +1023,6 @@ this.tasksjTable.setShowVerticalLines(true);
         TableVisualjInternalFrame.setMaximumSize(new java.awt.Dimension(1250, 1250));
         TableVisualjInternalFrame.setVisible(true);
         TableVisualjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                TableVisualjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 TableVisualjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -1038,6 +1031,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                TableVisualjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
         TableVisualjInternalFrame.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -2280,13 +2280,6 @@ this.tasksjTable.setShowVerticalLines(true);
         ResultsjInternalFrame.setNormalBounds(new java.awt.Rectangle(0, 0, 103, 33));
         ResultsjInternalFrame.setVisible(true);
         ResultsjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                ResultsjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 ResultsjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -2295,6 +2288,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                ResultsjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -2715,13 +2715,6 @@ this.tasksjTable.setShowVerticalLines(true);
         ContextsjInternalFrame.setPreferredSize(new java.awt.Dimension(477, 254));
         ContextsjInternalFrame.setVisible(true);
         ContextsjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                ContextsjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 ContextsjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -2730,6 +2723,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                ContextsjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -3245,13 +3245,6 @@ this.tasksjTable.setShowVerticalLines(true);
         ResultSetContentjInternalFrame.setNormalBounds(new java.awt.Rectangle(0, 0, 103, 33));
         ResultSetContentjInternalFrame.setVisible(true);
         ResultSetContentjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                ResultSetContentjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 ResultSetContentjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -3260,6 +3253,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                ResultSetContentjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
         ResultSetContentjInternalFrame.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -3325,13 +3325,6 @@ this.tasksjTable.setShowVerticalLines(true);
         ContextPropertiesjInternalFrame.setPreferredSize(new java.awt.Dimension(424, 208));
         ContextPropertiesjInternalFrame.setVisible(true);
         ContextPropertiesjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                ContextPropertiesjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 ContextPropertiesjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -3340,6 +3333,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                ContextPropertiesjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -3419,13 +3419,6 @@ this.tasksjTable.setShowVerticalLines(true);
         ResultSetPropertiesjInternalFrame.setNormalBounds(new java.awt.Rectangle(0, 0, 103, 33));
         ResultSetPropertiesjInternalFrame.setVisible(true);
         ResultSetPropertiesjInternalFrame.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                ResultSetPropertiesjInternalFrameInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
                 ResultSetPropertiesjInternalFrameInternalFrameDeactivated(evt);
             }
@@ -3434,6 +3427,13 @@ this.tasksjTable.setShowVerticalLines(true);
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                ResultSetPropertiesjInternalFrameInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -5180,8 +5180,9 @@ this.tasksjTable.setShowVerticalLines(true);
             
             if ( ContentjTable.getSelectedRows().length == 1 )
             {
-                
-                this.shownTableContentRowId = String.valueOf(this.ContentjTable.getSelectedRow());
+                DefaultTableModel m = (DefaultTableModel) ContentjTable.getModel();
+                String rowid = (String) m.getValueAt(this.ContentjTable.getSelectedRow(), 0);
+                this.shownTableContentRowId = rowid;
                 this.ShowTableContentRowId();
             }
         }
@@ -5437,12 +5438,7 @@ this.tasksjTable.setShowVerticalLines(true);
         {
             return;
         }
-        if ( this.ContextsStackContentjTable.getSelectedRows() == null || this.ContextsStackContentjTable.getSelectedRows().length == 0) 
-        {
-            this.CurrentSession.shownContextIndex = -1;
-            CurrentContext = null;
-            return;
-        }
+
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) 
         {
             if (this.ContextsStackContentjTable.getSelectedRows().length == 1)
@@ -5597,22 +5593,36 @@ this.tasksjTable.setShowVerticalLines(true);
             return;
         }
 
-        try {
+        if ( evt.getButton() == MouseEvent.BUTTON1)
+        { 
+            try 
+            {
+                if ( rows == 1)
+                {
+                    CurrentResultSet = CurrentSession.RSStack.stack.get( ResultsStackContentjTable.getSelectedRow() );
+                    CurrentSession.shownRSContentIndex = ResultsStackContentjTable.getSelectedRow();
+                }
+            } catch (Exception e) {
+                this.Updatelog("selected ResultSet not existing. Aborting \n");
+                CurrentResultSet = null;
+                return;
+            }
             if ( rows == 1)
             {
-                CurrentResultSet = CurrentSession.RSStack.stack.get( ResultsStackContentjTable.getSelectedRow() );
-                CurrentSession.shownRSContentIndex = ResultsStackContentjTable.getSelectedRow();
+                this.shownRSIndex = ResultsStackContentjTable.getSelectedRow();
+                this.ShowResulSetStackContent(ResultsStackContentjTable.getSelectedRow() );
             }
-        } catch (Exception e) {
-            this.Updatelog("selected ResultSet not existing. Aborting \n");
-            CurrentResultSet = null;
-            return;
         }
-        if ( rows == 1)
+        
+        if ( evt.getButton() == MouseEvent.BUTTON3)
         {
-            this.shownRSIndex = ResultsStackContentjTable.getSelectedRow();
-            this.ShowResulSetStackContent(ResultsStackContentjTable.getSelectedRow() );
+            this.resultsStackContentPopUpMenu._frame = this;
+            this.resultsStackContentPopUpMenu.mouseX = evt.getX();
+            this.resultsStackContentPopUpMenu.mouseY = evt.getY();
+            this.resultsStackContentPopUpMenu.show( evt.getComponent(), evt.getX(), evt.getY() );
         }
+        
+        
     }//GEN-LAST:event_ResultsStackContentjTableMouseReleased
 
     private void ResultsjInternalFrameInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_ResultsjInternalFrameInternalFrameActivated
