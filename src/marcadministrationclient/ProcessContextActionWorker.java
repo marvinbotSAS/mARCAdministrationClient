@@ -789,6 +789,11 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             {
                 this.componentToEnable.setEnabled(true);
             }
+            
+            if ( Action.equals("ContextToDoc") )
+            {
+                _frame.ShowResulSetStack();
+            }
         } catch (InterruptedException ex) {
             Logger.getLogger(ProcessContextActionWorker.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ExecutionException ex) {
