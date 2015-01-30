@@ -192,7 +192,7 @@ public class Settings {
        serverNode.appendChild(e);  
        
         e = document.createElement("FieldsTableColumnsWidths");
-        e.setAttribute("length",String.valueOf(String.valueOf(server.FieldsTableColumnsWidths.length)  ) ); 
+        e.setAttribute("length",String.valueOf(server.FieldsTableColumnsWidths.length)   ); 
         serverNode.appendChild(e);
         
         for (int i = 0; i < server.FieldsTableColumnsWidths.length; i++)
@@ -204,7 +204,7 @@ public class Settings {
 
         
         e = document.createElement("sessionsTablecolumnsWidths");
-        e.setAttribute("length",String.valueOf(String.valueOf(server.sessionsTablecolumnsWidths.length)  ) ); 
+        e.setAttribute("length",String.valueOf(server.sessionsTablecolumnsWidths.length)   ); 
         serverNode.appendChild(e); 
         for (int i = 0; i <  server.sessionsTablecolumnsWidths.length;i++ )
         {
@@ -214,7 +214,7 @@ public class Settings {
         }
 
         e = document.createElement("tasksTablecolumnsWidths");
-        e.setAttribute("length",String.valueOf(String.valueOf(server.tasksTablecolumnsWidths.length)  ) ); 
+        e.setAttribute("length",String.valueOf(server.tasksTablecolumnsWidths.length)  ); 
         serverNode.appendChild(e); 
         for (int i = 0; i <  server.tasksTablecolumnsWidths.length;i++ )
         {
@@ -226,7 +226,7 @@ public class Settings {
         if ( server.ContentTablecolumnsWidths != null && server.ContentTablecolumnsWidths.length != 0)
         { 
             e = document.createElement("ContentTablecolumnsWidths");
-            e.setAttribute("length",String.valueOf(String.valueOf(server.ContentTablecolumnsWidths.length)  ) ); 
+            e.setAttribute("length",String.valueOf(server.ContentTablecolumnsWidths.length)   ); 
             serverNode.appendChild(e);  
             for (int i = 0; i < server.ContentTablecolumnsWidths.length; i++)
             {
@@ -236,7 +236,7 @@ public class Settings {
             }
         }
        e = document.createElement("BTreesColumnsWidths");
-       e.setAttribute("length",String.valueOf(String.valueOf(server.BTreesColumnsWidths.length) )  ); 
+       e.setAttribute("length",String.valueOf(server.BTreesColumnsWidths.length)   ); 
        serverNode.appendChild(e);  
        for (int i = 0; i < server.BTreesColumnsWidths.length; i++)
        {
@@ -247,7 +247,7 @@ public class Settings {
 
        
        e = document.createElement("KTreesColumnsWidths");
-       e.setAttribute("length",String.valueOf(String.valueOf(server.KTreesColumnsWidths.length) )  ); 
+       e.setAttribute("length",String.valueOf(server.KTreesColumnsWidths.length)   ); 
        serverNode.appendChild(e);
        for (int i = 0; i < server.KTreesColumnsWidths.length; i++)
        {
@@ -259,7 +259,7 @@ public class Settings {
   
        
        e = document.createElement("LDBTableColumnsWidths");
-       e.setAttribute("length",String.valueOf(String.valueOf(server.LDBTableColumnsWidths.length)  ) ); 
+       e.setAttribute("length",String.valueOf(server.LDBTableColumnsWidths.length)   ); 
        serverNode.appendChild(e);
        for (int i = 0; i < server.LDBTableColumnsWidths.length; i++)
        {
@@ -358,7 +358,7 @@ public class Settings {
             if (session.ResulSetContentColumnsWidths != null && session.ResulSetContentColumnsWidths.length != 0 )
             {
                 e = document.createElement("ResulSetContentColumnsWidths");
-                e.setAttribute("length",String.valueOf(String.valueOf(session.ResulSetContentColumnsWidths.length)  ) ); 
+                e.setAttribute("length",String.valueOf(session.ResulSetContentColumnsWidths.length)   ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.ResulSetContentColumnsWidths.length; i++)
                 {
@@ -372,7 +372,7 @@ public class Settings {
             {
                 e = document.createElement("ResulSetPropertiesColumnsWidths");
             
-                e.setAttribute("length",String.valueOf(String.valueOf(session.ResulSetPropertiesColumnsWidths.length)  ) ); 
+                e.setAttribute("length",String.valueOf(session.ResulSetPropertiesColumnsWidths.length)   ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.ResulSetPropertiesColumnsWidths.length; i++)
                 {
@@ -385,7 +385,7 @@ public class Settings {
             if ( session.contextContentColumnsWidhts!= null && session.contextContentColumnsWidhts.length != 0)
             {
                 e = document.createElement("contextContentColumnsWidhts");
-                e.setAttribute("length",String.valueOf(String.valueOf(session.contextContentColumnsWidhts.length) )  ); 
+                e.setAttribute("length",String.valueOf(session.contextContentColumnsWidhts.length)   ); 
                 sessionNode.appendChild(e); 
                 for (int i = 0; i < session.contextContentColumnsWidhts.length; i++)
                 {
@@ -408,7 +408,7 @@ public class Settings {
             if ( session.contextsStackColumnsWidths != null && session.contextsStackColumnsWidths.length != 0 )
             {
                 e = document.createElement("contextsStackColumnsWidths");
-                e.setAttribute("length",String.valueOf(String.valueOf(session.contextsStackColumnsWidths.length)  ) ); 
+                e.setAttribute("length",String.valueOf(session.contextsStackColumnsWidths.length)   ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.contextsStackColumnsWidths.length; i++)
                 {
@@ -421,7 +421,7 @@ public class Settings {
             if ( session.sessionPropertiesTableColumnsWidhts != null && session.sessionPropertiesTableColumnsWidhts.length != 0)
             {
                 e = document.createElement("sessionPropertiesTableColumnsWidhts");
-                e.setAttribute("length",String.valueOf(String.valueOf(session.sessionPropertiesTableColumnsWidhts.length)  ) ); 
+                e.setAttribute("length",String.valueOf(session.sessionPropertiesTableColumnsWidhts.length)   ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.sessionPropertiesTableColumnsWidhts.length; i++)
                 {
@@ -433,7 +433,7 @@ public class Settings {
             if ( session.sessionSpectrumTableColumnsWidhts != null && session.sessionSpectrumTableColumnsWidhts.length != 0 )
             {
                 e = document.createElement("sessionSpectrumTableColumnsWidhts");
-                e.setAttribute("length",String.valueOf(String.valueOf(session.sessionSpectrumTableColumnsWidhts.length)  ) ); 
+                e.setAttribute("length",String.valueOf(session.sessionSpectrumTableColumnsWidhts.length)   ); 
                 sessionNode.appendChild(e); 
                 for (int i = 0; i < session.sessionSpectrumTableColumnsWidhts.length; i++)
                 {
