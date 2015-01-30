@@ -5633,7 +5633,7 @@ this.tasksjTable.setShowVerticalLines(true);
 
     public void ShowResulSetStack()
     {
-        if (CurrentSession == null || CurrentTable == null )
+        if ( CurrentSession == null )
         {
             return;
         }

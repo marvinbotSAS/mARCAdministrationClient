@@ -116,20 +116,20 @@ public class Settings {
        e.appendChild(document.createTextNode(String.valueOf(server.WindowSplitDividerLocation) ) ); 
        serverNode.appendChild(e); 
        e = document.createElement("SessionsTasksSplitDividerlocation");  
-       e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.SessionsTasksSplitDividerlocation)) ) ); 
+       e.appendChild(document.createTextNode(String.valueOf(server.SessionsTasksSplitDividerlocation))  ); 
        serverNode.appendChild(e);  
        
        e = document.createElement("ServerInternalSplitDividerLocation");  
-       e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.ServerInternalSplitDividerLocation)) ) ); 
+       e.appendChild(document.createTextNode(String.valueOf(server.ServerInternalSplitDividerLocation) ) ); 
        serverNode.appendChild(e); 
        
        e = document.createElement("SelectedTableIndex");  
-       e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.SelectedTableIndex)) ) ); 
+       e.appendChild(document.createTextNode(String.valueOf(server.SelectedTableIndex))  ); 
        serverNode.appendChild(e);       
 
        e = document.createElement("CurrentSessionIndex");  
        int idx = server.FindSessionIndex(server.CurrentSession);
-       e.appendChild(document.createTextNode(String.valueOf(String.valueOf(idx)) ) ); 
+       e.appendChild(document.createTextNode(String.valueOf(idx) ) ); 
        serverNode.appendChild(e);
 
        if ( server.CurrentTable == null)
@@ -139,12 +139,12 @@ public class Settings {
        else
        {
          e = document.createElement("CurrentTableName");
-         e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.CurrentTable.name)) ) );    
+         e.appendChild(document.createTextNode(String.valueOf(server.CurrentTable.name))  );    
          serverNode.appendChild(e);
          if ( server.selectedFields != null && server.selectedFields.length != 0 )
          {
             e = document.createElement("selectedFields");
-            e.setAttribute("length",String.valueOf(String.valueOf(server.selectedFields.length) )  ); 
+            e.setAttribute("length",String.valueOf(server.selectedFields.length)   ); 
             serverNode.appendChild(e);
             for (int i = 0; i < server.selectedFields.length; i++)
             {
@@ -164,27 +164,27 @@ public class Settings {
          serverNode.appendChild(e);         
          
          e = document.createElement("TableContentShownRowId");
-         e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.TableContentShownRowId)  ) ) ); 
+         e.appendChild(document.createTextNode(String.valueOf(server.TableContentShownRowId)   ) ); 
          serverNode.appendChild(e);
          
          e = document.createElement("TableContentSize");
-         e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.TableContentSize)  ) ) ); 
+         e.appendChild(document.createTextNode(String.valueOf(server.TableContentSize)  )  ); 
          serverNode.appendChild(e);
          
          e = document.createElement("TableContentSliderValue");
-         e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.TableContentSliderValue)  ) ) ); 
+         e.appendChild(document.createTextNode(String.valueOf(server.TableContentSliderValue)   ) ); 
          serverNode.appendChild(e);
          
          e = document.createElement("TableContentStart");
-         e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.TableContentStart)  ) ) ); 
+         e.appendChild(document.createTextNode(String.valueOf(server.TableContentStart)   ) ); 
          serverNode.appendChild(e);        
  
          e = document.createElement("firstTableContentVisibleRow");
-         e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.firstTableContentVisibleRow)  ) ) ); 
+         e.appendChild(document.createTextNode(String.valueOf(server.firstTableContentVisibleRow)   ) ); 
          serverNode.appendChild(e);           
 
          e = document.createElement("lastTableContentVisibleRow");
-         e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.lastTableContentVisibleRow)  ) ) ); 
+         e.appendChild(document.createTextNode(String.valueOf(server.lastTableContentVisibleRow)   ) ); 
          serverNode.appendChild(e);  
          
        e = document.createElement("tablesDividerLocation");
@@ -192,7 +192,7 @@ public class Settings {
        serverNode.appendChild(e);  
        
         e = document.createElement("FieldsTableColumnsWidths");
-        e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(server.FieldsTableColumnsWidths.length) ) ) ); 
+        e.setAttribute("length",String.valueOf(String.valueOf(server.FieldsTableColumnsWidths.length)  ) ); 
         serverNode.appendChild(e);
         
         for (int i = 0; i < server.FieldsTableColumnsWidths.length; i++)
@@ -204,7 +204,7 @@ public class Settings {
 
         
         e = document.createElement("sessionsTablecolumnsWidths");
-        e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(server.sessionsTablecolumnsWidths.length) ) ) ); 
+        e.setAttribute("length",String.valueOf(String.valueOf(server.sessionsTablecolumnsWidths.length)  ) ); 
         serverNode.appendChild(e); 
         for (int i = 0; i <  server.sessionsTablecolumnsWidths.length;i++ )
         {
@@ -214,7 +214,7 @@ public class Settings {
         }
 
         e = document.createElement("tasksTablecolumnsWidths");
-        e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(server.tasksTablecolumnsWidths.length) ) ) ); 
+        e.setAttribute("length",String.valueOf(String.valueOf(server.tasksTablecolumnsWidths.length)  ) ); 
         serverNode.appendChild(e); 
         for (int i = 0; i <  server.tasksTablecolumnsWidths.length;i++ )
         {
@@ -226,7 +226,7 @@ public class Settings {
         if ( server.ContentTablecolumnsWidths != null && server.ContentTablecolumnsWidths.length != 0)
         { 
             e = document.createElement("ContentTablecolumnsWidths");
-            e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(server.ContentTablecolumnsWidths.length) ) ) ); 
+            e.setAttribute("length",String.valueOf(String.valueOf(server.ContentTablecolumnsWidths.length)  ) ); 
             serverNode.appendChild(e);  
             for (int i = 0; i < server.ContentTablecolumnsWidths.length; i++)
             {
@@ -236,7 +236,7 @@ public class Settings {
             }
         }
        e = document.createElement("BTreesColumnsWidths");
-       e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(server.BTreesColumnsWidths.length) ) ) ); 
+       e.setAttribute("length",String.valueOf(String.valueOf(server.BTreesColumnsWidths.length) )  ); 
        serverNode.appendChild(e);  
        for (int i = 0; i < server.BTreesColumnsWidths.length; i++)
        {
@@ -247,7 +247,7 @@ public class Settings {
 
        
        e = document.createElement("KTreesColumnsWidths");
-       e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(server.KTreesColumnsWidths.length) ) ) ); 
+       e.setAttribute("length",String.valueOf(String.valueOf(server.KTreesColumnsWidths.length) )  ); 
        serverNode.appendChild(e);
        for (int i = 0; i < server.KTreesColumnsWidths.length; i++)
        {
@@ -259,7 +259,7 @@ public class Settings {
   
        
        e = document.createElement("LDBTableColumnsWidths");
-       e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(server.LDBTableColumnsWidths.length) ) ) ); 
+       e.setAttribute("length",String.valueOf(String.valueOf(server.LDBTableColumnsWidths.length)  ) ); 
        serverNode.appendChild(e);
        for (int i = 0; i < server.LDBTableColumnsWidths.length; i++)
        {
@@ -270,7 +270,7 @@ public class Settings {
        
        
        e = document.createElement("LDBTreesDividerLocation");
-       e.appendChild(document.createTextNode(String.valueOf(String.valueOf(server.LDBTreesDividerLocation)  ) ) ); 
+       e.appendChild(document.createTextNode(String.valueOf(server.LDBTreesDividerLocation)  )  ); 
        serverNode.appendChild(e);
 
        // current ResultSet format
@@ -352,13 +352,13 @@ public class Settings {
 
             
             e = document.createElement("RSstackDividerLocation");  
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.RSstackDividerLocation)) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.RSstackDividerLocation))  ); 
             sessionNode.appendChild(e);
             
             if (session.ResulSetContentColumnsWidths != null && session.ResulSetContentColumnsWidths.length != 0 )
             {
                 e = document.createElement("ResulSetContentColumnsWidths");
-                e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(session.ResulSetContentColumnsWidths.length) ) ) ); 
+                e.setAttribute("length",String.valueOf(String.valueOf(session.ResulSetContentColumnsWidths.length)  ) ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.ResulSetContentColumnsWidths.length; i++)
                 {
@@ -372,7 +372,7 @@ public class Settings {
             {
                 e = document.createElement("ResulSetPropertiesColumnsWidths");
             
-                e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(session.ResulSetPropertiesColumnsWidths.length) ) ) ); 
+                e.setAttribute("length",String.valueOf(String.valueOf(session.ResulSetPropertiesColumnsWidths.length)  ) ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.ResulSetPropertiesColumnsWidths.length; i++)
                 {
@@ -385,7 +385,7 @@ public class Settings {
             if ( session.contextContentColumnsWidhts!= null && session.contextContentColumnsWidhts.length != 0)
             {
                 e = document.createElement("contextContentColumnsWidhts");
-                e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(session.contextContentColumnsWidhts.length) ) ) ); 
+                e.setAttribute("length",String.valueOf(String.valueOf(session.contextContentColumnsWidhts.length) )  ); 
                 sessionNode.appendChild(e); 
                 for (int i = 0; i < session.contextContentColumnsWidhts.length; i++)
                 {
@@ -396,7 +396,7 @@ public class Settings {
             }
             
             e = document.createElement("contextPropertiesColumnsWidths");
-            e.setAttribute("length",String.valueOf(String.valueOf(session.contextPropertiesColumnsWidths.length) ) ); 
+            e.setAttribute("length",String.valueOf(session.contextPropertiesColumnsWidths.length)  ); 
             sessionNode.appendChild(e);
             for (int i = 0; i < session.contextPropertiesColumnsWidths.length; i++)
             {
@@ -408,7 +408,7 @@ public class Settings {
             if ( session.contextsStackColumnsWidths != null && session.contextsStackColumnsWidths.length != 0 )
             {
                 e = document.createElement("contextsStackColumnsWidths");
-                e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(session.contextsStackColumnsWidths.length) ) ) ); 
+                e.setAttribute("length",String.valueOf(String.valueOf(session.contextsStackColumnsWidths.length)  ) ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.contextsStackColumnsWidths.length; i++)
                 {
@@ -421,7 +421,7 @@ public class Settings {
             if ( session.sessionPropertiesTableColumnsWidhts != null && session.sessionPropertiesTableColumnsWidhts.length != 0)
             {
                 e = document.createElement("sessionPropertiesTableColumnsWidhts");
-                e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(session.sessionPropertiesTableColumnsWidhts.length) ) ) ); 
+                e.setAttribute("length",String.valueOf(String.valueOf(session.sessionPropertiesTableColumnsWidhts.length)  ) ); 
                 sessionNode.appendChild(e);
                 for (int i = 0; i < session.sessionPropertiesTableColumnsWidhts.length; i++)
                 {
@@ -433,7 +433,7 @@ public class Settings {
             if ( session.sessionSpectrumTableColumnsWidhts != null && session.sessionSpectrumTableColumnsWidhts.length != 0 )
             {
                 e = document.createElement("sessionSpectrumTableColumnsWidhts");
-                e.setAttribute("length",String.valueOf(String.valueOf(String.valueOf(session.sessionSpectrumTableColumnsWidhts.length) ) ) ); 
+                e.setAttribute("length",String.valueOf(String.valueOf(session.sessionSpectrumTableColumnsWidhts.length)  ) ); 
                 sessionNode.appendChild(e); 
                 for (int i = 0; i < session.sessionSpectrumTableColumnsWidhts.length; i++)
                 {
@@ -444,31 +444,31 @@ public class Settings {
             }
             
             e = document.createElement("ResultsAmplifyB");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ResultsAmplifyB)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ResultsAmplifyB)   ) ); 
             sessionNode.appendChild(e);
             
             e = document.createElement("ResultsAmplifySlope");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ResultsAmplifySlope)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ResultsAmplifySlope)   ) ); 
             sessionNode.appendChild(e);            
 
             e = document.createElement("ResultsNormalizeItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ResultsNormalizeItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ResultsNormalizeItemIndex)   ) ); 
             sessionNode.appendChild(e); 
             
             e = document.createElement("ResultsSortByFieldItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ResultsSortByFieldItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ResultsSortByFieldItemIndex)   ) ); 
             sessionNode.appendChild(e); 
 
             e = document.createElement("ResultsSortByOrderItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ResultsSortByOrderItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ResultsSortByOrderItemIndex)   ) ); 
             sessionNode.appendChild(e); 
             
             e = document.createElement("ResultsUniqueByItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ResultsUniqueByItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ResultsUniqueByItemIndex)  )  ); 
             sessionNode.appendChild(e);  
             
             e = document.createElement("SelectFromTableFieldItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.SelectFromTableFieldItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.SelectFromTableFieldItemIndex)  )  ); 
             sessionNode.appendChild(e);  
             
             e = document.createElement("SelectFromTableModeItemIndex");
@@ -489,39 +489,39 @@ public class Settings {
             sessionNode.appendChild(e);
             
             e = document.createElement("contextAmplifyB");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.contextAmplifyB)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.contextAmplifyB)  )  ); 
             sessionNode.appendChild(e); 
             
             e = document.createElement("contextAmplifySlope");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.contextAmplifySlope)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.contextAmplifySlope)   ) ); 
             sessionNode.appendChild(e);             
 
             e = document.createElement("contextIntersectionItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.contextIntersectionItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.contextIntersectionItemIndex)   ) ); 
             sessionNode.appendChild(e);
             
             e = document.createElement("contextNormalizeItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.contextNormalizeItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.contextNormalizeItemIndex)  )  ); 
             sessionNode.appendChild(e);  
             
             e = document.createElement("contextSortByFieldItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.contextSortByFieldItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.contextSortByFieldItemIndex)  )  ); 
             sessionNode.appendChild(e);    
             
             e = document.createElement("contextSortByOrderItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.contextSortByOrderItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.contextSortByOrderItemIndex)  )  ); 
             sessionNode.appendChild(e);
             
             e = document.createElement("contextUnionItemIndex");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.contextUnionItemIndex)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.contextUnionItemIndex)  )  ); 
             sessionNode.appendChild(e);     
             
             e = document.createElement("ctxStackAndContentDividerlocation");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ctxStackAndContentDividerlocation)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ctxStackAndContentDividerlocation)   ) ); 
             sessionNode.appendChild(e);  
             
             e = document.createElement("ctxStaskDividerlocation");
-            e.appendChild(document.createTextNode(String.valueOf(String.valueOf(session.ctxStaskDividerlocation)  ) ) ); 
+            e.appendChild(document.createTextNode(String.valueOf(session.ctxStaskDividerlocation)   ) ); 
             sessionNode.appendChild(e); 
             
        }
@@ -602,8 +602,14 @@ public static void LoadSettings(MainJFrame frame)
         frame.AddAnewServer(server);
 
         server.currentRSFormat = e.getElementsByTagName("RSformat").item(0).getTextContent();  
-        
-        server.currentTableName = e.getElementsByTagName("CurrentTableName").item(0).getTextContent(); 
+        try
+        {
+            server.currentTableName = e.getElementsByTagName("CurrentTableName").item(0).getTextContent();
+        } 
+        catch(Exception eee)
+        {
+            server.currentTableName = "none";
+        }
            server.WindowSplitDividerLocation = Integer.parseInt(e.getElementsByTagName("WindowSplitDividerLocation").item(0).getTextContent());  
             server.SessionsTasksSplitDividerlocation = Integer.parseInt(e.getElementsByTagName("SessionsTasksSplitDividerlocation").item(0).getTextContent());  
            server.ServerInternalSplitDividerLocation = Integer.parseInt(e.getElementsByTagName("ServerInternalSplitDividerLocation").item(0).getTextContent());  
