@@ -35,6 +35,7 @@ import javax.swing.tree.*;
 public class ResultsStackContentPopUpMenu extends JPopupMenu implements ActionListener
 {
 
+   JMenuItem clearItem = new JMenuItem("Clear") ;
    JMenuItem newItem = new JMenuItem("New") ;
    JMenuItem ontopItem = new JMenuItem("OnTop") ; 
    JMenuItem intersectItem = new JMenuItem("Intersection") ;
@@ -66,6 +67,8 @@ public class ResultsStackContentPopUpMenu extends JPopupMenu implements ActionLi
     public ResultsStackContentPopUpMenu() 
     {
         this.column = -1;
+        add(clearItem);
+        clearItem.addActionListener( this );
         add(newItem);
         newItem.addActionListener( this );
         add(ontopItem);
@@ -103,6 +106,11 @@ public void actionPerformed( ActionEvent e )
              // determine which menu item was selected
 
              if ( e.getActionCommand().equals(newItem.getActionCommand() ) )
+             {
+                 _frame.ClearRs();
+                 return;
+             }
+             else if ( e.getActionCommand().equals(newItem.getActionCommand() ) )
              {
                  _frame.NewRs();
                  return;

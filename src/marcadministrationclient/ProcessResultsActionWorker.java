@@ -133,13 +133,27 @@ public class ProcessResultsActionWorker extends SwingWorker<Void,Void>
         try
         {
        switch (Action) {
+           case "Clear":
+            fetchAll = true;
+                session.connector.directExecute = true;
+                session.connector.openScript(null);
+                session.connector.SESSION_Clear("results");
+                if ( session.connector.result.mError )
+                {
+                    this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
+             //       session.connector.UnLock();
+                    return null;
+                }
+               script += session.connector.RawScript+"\n";
+               break;
            case "ShowOneResultSetProperties":
                // on recupere le content d'un context
                if ( ResultSetIndex == -1)
                {
                    logMsg = "No Context Selected. Aborting. \n";
                    return null;
-               }  break;
+               }  
+               break;
            case "New":
                session.connector.directExecute = true;
                session.connector.openScript(null);
@@ -438,6 +452,7 @@ public class ProcessResultsActionWorker extends SwingWorker<Void,Void>
         if ( count == 0 )
         {
             this.logMsg +="No ResulSet on Results Stack. \n";
+            session.RSStack.stack.clear();
         }
         else // maj de la pile
         {

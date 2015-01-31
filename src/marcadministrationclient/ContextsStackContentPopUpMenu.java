@@ -36,6 +36,7 @@ import javax.swing.tree.*;
 public class ContextsStackContentPopUpMenu extends JPopupMenu implements ActionListener, MouseMotionListener
 {
 
+   JMenuItem clearItem = new JMenuItem("Clear") ;
    JMenuItem newItem = new JMenuItem("New") ;
    JMenuItem ontopItem = new JMenuItem("OnTop") ; 
    JMenuItem intersectItem = new JMenuItem("Intersection") ;
@@ -65,6 +66,8 @@ public class ContextsStackContentPopUpMenu extends JPopupMenu implements ActionL
     public ContextsStackContentPopUpMenu() 
     {
         this.column = -1;
+        add(clearItem);
+        clearItem.addActionListener( this );
         add(newItem);
         newItem.addActionListener( this );
         add(ontopItem);
@@ -112,7 +115,11 @@ public void actionPerformed( ActionEvent e )
 {
              // determine which menu item was selected
              JTable table = (JTable) getInvoker();
-
+             
+             if ( e.getActionCommand().equals(clearItem.getActionCommand() ) )
+             {
+                 _frame.ContextsClear();
+             }
              if ( e.getActionCommand().equals(newItem.getActionCommand() ) )
              {
                  _frame.ContextNew();

@@ -151,6 +151,19 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
         switch (Action) {
             case "none":
                 break;
+            case "Clear":
+                fetchAll = true;
+                 session.connector.directExecute = true;
+                session.connector.openScript(null);
+                session.connector.SESSION_Clear("contexts");
+                if ( session.connector.result.mError )
+                {
+                    this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
+             //       session.connector.UnLock();
+                    return null;
+                }
+                script += session.connector.RawScript+"\n";
+                break;
             case "New":
                 session.connector.directExecute = true;
                 session.connector.openScript(null);
@@ -663,6 +676,7 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
         if ( count == 0 )
         {
             logMsg += "No Contexts on the Stack. \n";
+            session.contextsStack.stack.clear();
         }
         else
         {

@@ -2619,7 +2619,7 @@ this.tasksjTable.setShowVerticalLines(true);
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ResultsSortByjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE))
+                        .addComponent(ResultsSortByjPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
                     .addComponent(ResultsUniqueByjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ResultsDeleteByjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2819,7 +2819,7 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2833,7 +2833,7 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addComponent(CtxStackAndContentjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+                .addComponent(CtxStackAndContentjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                 .addGap(6, 6, 6))
         );
         jPanel12Layout.setVerticalGroup(
@@ -3057,7 +3057,7 @@ this.tasksjTable.setShowVerticalLines(true);
             ContextsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContextsjPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ContextsStackjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE))
+                .addComponent(ContextsStackjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE))
         );
         ContextsjPanelLayout.setVerticalGroup(
             ContextsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3578,14 +3578,14 @@ this.tasksjTable.setShowVerticalLines(true);
         ServersTree.setAutoscrolls(true);
         ServersTree.setMaximumSize(new java.awt.Dimension(59, 54));
         ServersTree.setPreferredSize(new java.awt.Dimension(59, 54));
-        ServersTree.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ServersTreeMouseReleased(evt);
-            }
-        });
         ServersTree.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 ServersTreeMouseMoved(evt);
+            }
+        });
+        ServersTree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ServersTreeMouseReleased(evt);
             }
         });
         jScrollPane1.setViewportView(ServersTree);
@@ -6628,7 +6628,6 @@ this.tasksjTable.setShowVerticalLines(true);
         m.setRowCount(0);
         if (this.CurrentSession.RSStack.stack.isEmpty()) {
             this.Updatelog("No ResultSets in current session ResultSets stack. \n");
-            return;
         }
         this.CurrentResultSet = null;
         int i = 0;
@@ -6764,7 +6763,21 @@ this.tasksjTable.setShowVerticalLines(true);
         
     }
 
-
+    public void ClearRs()
+    {
+         if (CurrentSession == null)
+        {
+            this.Updatelog("No Session selected. 'New' aborted. \n");
+            return;
+        }
+        ProcessResultsActionWorker w = new ProcessResultsActionWorker();
+        w.Action = "Clear";
+        w._frame = this;
+        w.session = CurrentSession;
+        w.fetchAll = true;
+        w.fetchTopMostContent = true;
+        w.execute();       
+    }
     public void NewRs()
     {
         if (CurrentSession == null)
@@ -6981,6 +6994,20 @@ this.tasksjTable.setShowVerticalLines(true);
         w.fetchAll = true;
         w.execute();
         
+    }
+    
+    public void ContextsClear()
+    {
+         if (CurrentSession == null )
+        {
+            this.Updatelog("No Session selected. Aborting \n");
+        }
+        ProcessContextActionWorker w = new ProcessContextActionWorker();
+        w._frame = this;
+        w.session = CurrentSession;
+        w.Action = "Clear";
+        w.fetchAll = true;
+        w.execute();       
     }
     public void ContextNew()
     {
@@ -7496,11 +7523,13 @@ this.tasksjTable.setShowVerticalLines(true);
         {
             return;
         }
-        if (this.CurrentSession.contextsStack.stack.isEmpty()) {
-            this.Updatelog("No contexts in current session contexts stack. \n");
-        }
         DefaultTableModel m = (DefaultTableModel) this.ContextsStackContentjTable.getModel();
         m.setRowCount(0);
+        if (this.CurrentSession.contextsStack.stack.isEmpty()) 
+        {
+            this.Updatelog("No contexts in current session contexts stack. \n");
+        }
+
         this.CurrentContext = null;
         int i = 0;
         for (Context ctx : this.CurrentSession.contextsStack.stack) 
