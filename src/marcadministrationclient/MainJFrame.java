@@ -721,7 +721,7 @@ this.tasksjTable.setShowVerticalLines(true);
             ServerCurrentSessionjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ServerCurrentSessionjInternalFrameLayout.createSequentialGroup()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(ClearSessionjButton))
         );
 
@@ -1230,6 +1230,11 @@ this.tasksjTable.setShowVerticalLines(true);
         ContentjTable.setMinimumSize(new java.awt.Dimension(200, 100));
         ContentjTable.setPreferredSize(new java.awt.Dimension(200, 200));
         ContentjTable.setSelectionBackground(new java.awt.Color(0, 102, 153));
+        ContentjTable.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                ContentjTableMouseMoved(evt);
+            }
+        });
         ContentjTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 ContentjTableMouseReleased(evt);
@@ -1238,11 +1243,6 @@ this.tasksjTable.setShowVerticalLines(true);
         ContentjTable.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 ContentjTableComponentShown(evt);
-            }
-        });
-        ContentjTable.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                ContentjTableMouseMoved(evt);
             }
         });
         TableContentjScrollPane.setViewportView(ContentjTable);
@@ -2837,7 +2837,7 @@ this.tasksjTable.setShowVerticalLines(true);
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
         );
 
         CtxStackAndContentjSplitPane.setRightComponent(jPanel13);
@@ -2852,7 +2852,7 @@ this.tasksjTable.setShowVerticalLines(true);
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CtxStackAndContentjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+            .addComponent(CtxStackAndContentjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
         );
 
         ContextsStackjSplitPane.setRightComponent(jPanel12);
@@ -3058,7 +3058,7 @@ this.tasksjTable.setShowVerticalLines(true);
                     .addComponent(stringToContextLearnjCheckBox)
                     .addComponent(stringToContextjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
         );
 
         stringToContextjSplitPane.setRightComponent(jPanel9);
@@ -3077,7 +3077,7 @@ this.tasksjTable.setShowVerticalLines(true);
             ContextsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContextsjPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ContextsStackjSplitPane))
+                .addComponent(ContextsStackjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ContextsjInternalFrameLayout = new javax.swing.GroupLayout(ContextsjInternalFrame.getContentPane());
@@ -5122,7 +5122,7 @@ this.tasksjTable.setShowVerticalLines(true);
          String field = ContentjTable.getColumnName(colid);
          TableField tf = CurrentTable.FindTableFieldFromName(field);
 
-         if (!tf.type.equals("STRING") && !tf.type.contains("ABSTRACT")) 
+         if (tf != null && !tf.type.equals("STRING") && !tf.type.contains("ABSTRACT")) 
          {
              ContentTablejTextArea.setText((String) m.getValueAt(row, colid));
 

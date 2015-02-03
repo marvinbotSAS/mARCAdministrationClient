@@ -616,8 +616,6 @@ public static void LoadSettings(MainJFrame frame)
            server.SelectedTableIndex =  Integer.parseInt(e.getElementsByTagName("SelectedTableIndex").item(0).getTextContent());
            int CurrentSessionIndex = Integer.parseInt(e.getElementsByTagName("CurrentSessionIndex").item(0).getTextContent());
 
-           server.currentTableName = e.getElementsByTagName("CurrentTableName").item(0).getTextContent();
-
            if (server.currentTableName.equals("null") )
            {
             server.CurrentTable = null;
