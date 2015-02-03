@@ -272,6 +272,7 @@ this.tasksjTable.setShowVerticalLines(true);
         SessionPropertiesjTable = new javax.swing.JTable();
         jPanel30 = new javax.swing.JPanel();
         SessionSpectrumjTable = new javax.swing.JTable();
+        ClearSessionjButton = new javax.swing.JButton();
         TablesjInternalFrame = new javax.swing.JInternalFrame();
         jScrollPane13 = new javax.swing.JScrollPane();
         TablesjSplitPane = new javax.swing.JSplitPane();
@@ -510,6 +511,7 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel35 = new javax.swing.JPanel();
         jScrollPane26 = new javax.swing.JScrollPane();
         ResultSetContentjTable = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
         ContextPropertiesjInternalFrame = new javax.swing.JInternalFrame();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane21 = new javax.swing.JScrollPane();
@@ -518,7 +520,6 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel49 = new javax.swing.JPanel();
         jScrollPane29 = new javax.swing.JScrollPane();
         ResultsPropertiesjTable = new javax.swing.JTable();
-        jButton7 = new javax.swing.JButton();
         LogjInternalFrame = new javax.swing.JInternalFrame();
         jScrollPane31 = new javax.swing.JScrollPane();
         logjTextArea = new javax.swing.JTextArea();
@@ -615,7 +616,9 @@ this.tasksjTable.setShowVerticalLines(true);
         );
         SessionPropertiesjPanelLayout.setVerticalGroup(
             SessionPropertiesjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SessionPropertiesjTable, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+            .addGroup(SessionPropertiesjPanelLayout.createSequentialGroup()
+                .addComponent(SessionPropertiesjTable, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19, Short.MAX_VALUE))
         );
 
         SessionPropertiesSpectrumjSplitPane.setLeftComponent(SessionPropertiesjPanel);
@@ -668,17 +671,17 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 417, Short.MAX_VALUE)
             .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel30Layout.createSequentialGroup()
-                    .addComponent(SessionSpectrumjTable, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                    .addGap(0, 0, 0)))
+                .addComponent(SessionSpectrumjTable, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 324, Short.MAX_VALUE)
             .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(SessionSpectrumjTable, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE))
+                .addGroup(jPanel30Layout.createSequentialGroup()
+                    .addComponent(SessionSpectrumjTable, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 19, Short.MAX_VALUE)))
         );
 
         SessionPropertiesSpectrumjSplitPane.setRightComponent(jPanel30);
@@ -698,17 +701,28 @@ this.tasksjTable.setShowVerticalLines(true);
 
         jScrollPane9.setViewportView(jPanel8);
 
+        ClearSessionjButton.setText("Clear Session");
+        ClearSessionjButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ClearSessionjButtonMouseReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout ServerCurrentSessionjInternalFrameLayout = new javax.swing.GroupLayout(ServerCurrentSessionjInternalFrame.getContentPane());
         ServerCurrentSessionjInternalFrame.getContentPane().setLayout(ServerCurrentSessionjInternalFrameLayout);
         ServerCurrentSessionjInternalFrameLayout.setHorizontalGroup(
             ServerCurrentSessionjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ServerCurrentSessionjInternalFrameLayout.createSequentialGroup()
+                .addComponent(ClearSessionjButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         ServerCurrentSessionjInternalFrameLayout.setVerticalGroup(
             ServerCurrentSessionjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ServerCurrentSessionjInternalFrameLayout.createSequentialGroup()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ClearSessionjButton))
         );
 
         TablesjInternalFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -3291,15 +3305,29 @@ this.tasksjTable.setShowVerticalLines(true);
         });
         jScrollPane26.setViewportView(ResultSetContentjTable);
 
+        jButton7.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        jButton7.setText("Fetch next");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton7MouseReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addComponent(jButton7)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7))
         );
 
         jScrollPane6.setViewportView(jPanel35);
@@ -3312,7 +3340,7 @@ this.tasksjTable.setShowVerticalLines(true);
         );
         ResultSetContentjInternalFrameLayout.setVerticalGroup(
             ResultSetContentjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
         );
 
         ContextPropertiesjInternalFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -3480,30 +3508,19 @@ this.tasksjTable.setShowVerticalLines(true);
         });
         jScrollPane29.setViewportView(ResultsPropertiesjTable);
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
-        jButton7.setText("Fetch next");
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton7MouseReleased(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel49Layout.createSequentialGroup()
-                .addGroup(jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7)
-                    .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))
+                .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel49Layout.createSequentialGroup()
-                .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7))
+                .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout ResultSetPropertiesjInternalFrameLayout = new javax.swing.GroupLayout(ResultSetPropertiesjInternalFrame.getContentPane());
@@ -5899,6 +5916,13 @@ this.tasksjTable.setShowVerticalLines(true);
      }
     }//GEN-LAST:event_TableContentjScrollPaneMouseReleased
 
+    private void ClearSessionjButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearSessionjButtonMouseReleased
+
+        
+        this.ClearSession();
+        
+    }//GEN-LAST:event_ClearSessionjButtonMouseReleased
+
     public void Updatelog(String msg) {
         if (msg == null || msg.isEmpty()) {
             return;
@@ -6994,6 +7018,20 @@ this.tasksjTable.setShowVerticalLines(true);
         w.fetchAll = true;
         w.execute();
         
+    }
+ 
+     public void ClearSession()
+    {
+         if (CurrentSession == null )
+        {
+            this.Updatelog("No Session selected. Aborting \n");
+        }
+        ProcessContextActionWorker w = new ProcessContextActionWorker();
+        w._frame = this;
+        w.session = CurrentSession;
+        w.Action = "ClearSession";
+        w.fetchAll = true;
+        w.execute();       
     }
     
     public void ContextsClear()
@@ -8313,6 +8351,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JTextField CacheHitsTextField;
     private javax.swing.JTextField CacheSizeTextField;
     private javax.swing.JLabel CacheUsedLabel;
+    private javax.swing.JButton ClearSessionjButton;
     private javax.swing.JTextField CommandThreadsTextField;
     private javax.swing.JLabel ConnectCountLabel;
     private javax.swing.JTextField ConnectCountjTextField;

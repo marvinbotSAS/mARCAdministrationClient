@@ -151,9 +151,22 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
         switch (Action) {
             case "none":
                 break;
+            case "ClearSession":
+                fetchAll = true;
+                session.connector.directExecute = true;
+                session.connector.openScript(null);
+                session.connector.SESSION_Clear("");
+                if ( session.connector.result.mError )
+                {
+                    this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
+             //       session.connector.UnLock();
+                    return null;
+                }
+                script += session.connector.RawScript+"\n";                
+                break;
             case "Clear":
                 fetchAll = true;
-                 session.connector.directExecute = true;
+                session.connector.directExecute = true;
                 session.connector.openScript(null);
                 session.connector.SESSION_Clear("contexts");
                 if ( session.connector.result.mError )
@@ -808,6 +821,12 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             {
                 _frame.ShowResulSetStack();
             }
+            
+            if ( Action.equals("ClearSession"))
+            {
+                _frame.ShowResulSetStack();
+            }
+            
         } catch (InterruptedException ex) {
             Logger.getLogger(ProcessContextActionWorker.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ExecutionException ex) {
