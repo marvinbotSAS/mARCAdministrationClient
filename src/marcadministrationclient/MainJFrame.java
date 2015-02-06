@@ -424,6 +424,11 @@ this.tasksjTable.setShowVerticalLines(true);
                 grphcs.drawImage(img, 0, 0, null);
             }
         };
+        ScriptsjInternalFrame = new javax.swing.JInternalFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane32 = new javax.swing.JScrollPane();
+        ScriptjTextArea = new javax.swing.JTextArea();
+        runScriptjButton = new javax.swing.JButton();
         ResultsjInternalFrame = new javax.swing.JInternalFrame();
         jScrollPane30 = new javax.swing.JScrollPane();
         RSstackjSplitPane = new javax.swing.JSplitPane();
@@ -2285,6 +2290,57 @@ this.tasksjTable.setShowVerticalLines(true);
             .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 1600, Short.MAX_VALUE)
         );
 
+        ScriptsjInternalFrame.setTitle("Scripts");
+        ScriptsjInternalFrame.setPreferredSize(new java.awt.Dimension(357, 65));
+        ScriptsjInternalFrame.setVisible(true);
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(341, 59));
+
+        jScrollPane32.setPreferredSize(new java.awt.Dimension(146, 30));
+
+        ScriptjTextArea.setColumns(20);
+        ScriptjTextArea.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        ScriptjTextArea.setLineWrap(true);
+        ScriptjTextArea.setRows(5);
+        ScriptjTextArea.setPreferredSize(new java.awt.Dimension(164, 29));
+        jScrollPane32.setViewportView(ScriptjTextArea);
+
+        runScriptjButton.setText("Run");
+        runScriptjButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                runScriptjButtonMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(runScriptjButton)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(runScriptjButton)
+                .addGap(0, 7, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ScriptsjInternalFrameLayout = new javax.swing.GroupLayout(ScriptsjInternalFrame.getContentPane());
+        ScriptsjInternalFrame.getContentPane().setLayout(ScriptsjInternalFrameLayout);
+        ScriptsjInternalFrameLayout.setHorizontalGroup(
+            ScriptsjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ScriptsjInternalFrameLayout.setVerticalGroup(
+            ScriptsjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+        );
+
         ResultsjInternalFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         ResultsjInternalFrame.setIconifiable(true);
         ResultsjInternalFrame.setMaximizable(true);
@@ -3540,7 +3596,7 @@ this.tasksjTable.setShowVerticalLines(true);
         LogjInternalFrame.setIconifiable(true);
         LogjInternalFrame.setMaximizable(true);
         LogjInternalFrame.setResizable(true);
-        LogjInternalFrame.setTitle("Scripts");
+        LogjInternalFrame.setTitle("Log Scripts");
         LogjInternalFrame.setMaximumSize(new java.awt.Dimension(1250, 1250));
         LogjInternalFrame.setNormalBounds(new java.awt.Rectangle(0, 0, 96, 33));
         LogjInternalFrame.setPreferredSize(new java.awt.Dimension(371, 314));
@@ -5923,6 +5979,27 @@ this.tasksjTable.setShowVerticalLines(true);
         
     }//GEN-LAST:event_ClearSessionjButtonMouseReleased
 
+    private void runScriptjButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_runScriptjButtonMouseReleased
+
+        if (this.CurrentSession == null )
+        {
+            this.Updatelog("no current session. Aborting execution of script. \n");
+            return;
+            
+        }
+        
+        ProcessContextActionWorker w = new ProcessContextActionWorker();
+        w._frame = this;
+        w.script = this.ScriptjTextArea.getText();
+        w.session = CurrentSession;
+        w.Action = "ExecuteScript";
+        w.fetchAll = true;
+        w.getSpectrum = true;
+        w.getproperties = true;
+        w.execute();  
+        
+    }//GEN-LAST:event_runScriptjButtonMouseReleased
+
     public void Updatelog(String msg) {
         if (msg == null || msg.isEmpty()) {
             return;
@@ -6452,6 +6529,12 @@ this.tasksjTable.setShowVerticalLines(true);
         this.ResultSetPropertiesjInternalFrame.setLocation(120, 120);
         this.jDesktopPane.add(this.ResultSetPropertiesjInternalFrame);
         this.ResultSetPropertiesjInternalFrame.show();
+        
+         this.ScriptsjInternalFrame.setSize(300, 300);
+        this.ScriptsjInternalFrame.setLocation(130, 130);
+        this.jDesktopPane.add(this.ScriptsjInternalFrame);
+        this.ScriptsjInternalFrame.show();       
+        
     }
 
     public void RemoveAServer(int x, int y) {
@@ -8437,6 +8520,8 @@ this.tasksjTable.setShowVerticalLines(true);
     public javax.swing.JComboBox ResultsUniqueByFieldjComboBox;
     private javax.swing.JPanel ResultsUniqueByjPanel;
     private javax.swing.JInternalFrame ResultsjInternalFrame;
+    private javax.swing.JTextArea ScriptjTextArea;
+    private javax.swing.JInternalFrame ScriptsjInternalFrame;
     public javax.swing.JComboBox SelectFromTableFieldjComboBox;
     public javax.swing.JComboBox SelectFromTableModejComboBox;
     private javax.swing.JPanel SelectFromTablejPanel;
@@ -8507,6 +8592,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
@@ -8549,6 +8635,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane30;
     private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane32;
     private javax.swing.JScrollPane jScrollPane33;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -8582,6 +8669,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JLabel relationsjLabel;
     private javax.swing.JTextField relationsjTextField;
     private javax.swing.JCheckBox restartjCheckBox;
+    private javax.swing.JButton runScriptjButton;
     public javax.swing.JComboBox selectToTableDestinationTableNamejComboBox;
     private javax.swing.JLabel shapesjLabel;
     private javax.swing.JTextField shapesjTextField;
