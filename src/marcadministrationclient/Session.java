@@ -147,7 +147,7 @@ public class Session
 
     public void PopSelectedContexts()
     {
-        if ( this.SelectedContexts == null || this.SelectedContexts.length == 0 )
+        if ( this.SelectedContexts == null || this.SelectedContexts.length == 0 || this.owner._frame.ContextsStackContentjTable.getRowCount() == 0 )
         {
             return;
         }
