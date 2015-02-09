@@ -323,6 +323,7 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
                 script += session.connector.RawScript+"\n";
                 break;
             case "Drop":
+                fetchAll = true;
                 session.connector.directExecute = false;
                 session.connector.openScript(null);
                 for (int row : rows)
@@ -678,11 +679,14 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             {
                 this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
             //    session.connector.UnLock();
-                return null;
+            }
+            else
+            {
+                name = session.connector.getDataByName("prop_value", 0)[0];
+                this.values = session.connector.getDataByName("prop_value", 0);
             }
             script += session.connector.RawScript+"\n";
-            name = session.connector.getDataByName("prop_value", 0)[0];
-            this.values = session.connector.getDataByName("prop_value", 0);
+
         }
 // maj de la pile
         int count  = -1;
@@ -807,10 +811,10 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             
             _frame.Updatelog(logMsg);
             
-            if ( session.connector.result.mError )
-            {
-                return;
-            }
+//            if ( session.connector.result.mError )
+//            {
+//                return;
+//            }
             if ( fetchAll )
             {
                 _frame.updateContextsStack();
@@ -820,6 +824,7 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             {
                 _frame.updateSessionSpectrum(this.spectrum_values);
             }
+
             if ( (contextIndex != -1 && fetchContent) || getproperties  ||setproperties )
             {
                 _frame.UpdateSelectedContext(contextIndex,values, shapes, activities,generalities, gen_class,id,name);

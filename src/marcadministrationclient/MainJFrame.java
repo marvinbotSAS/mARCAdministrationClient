@@ -27,6 +27,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,7 +47,10 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.tree.*;
 import javax.xml.transform.TransformerException;
 import mARC.Connector.*;
-
+import javax.swing.JFileChooser;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import javax.swing.DefaultListModel;
 /**
  *
  * @author patrice
@@ -57,6 +61,8 @@ public class MainJFrame extends javax.swing.JFrame {
     boolean firstTimeToDisplaySessionjPanel = true;
     
     public boolean loadingSettings;
+    
+    public Script CurrentScript;
     
     ServersTreePopUpMenu serversTreePopUpMenu;
     TablesTreePopUpMenu tablesPopUpMenu;
@@ -112,6 +118,7 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     public MainJFrame() {
+        this.CurrentScript = null;
         this.loadingSettings = false;
         this.shownTableContentRowId = "-1";
         this.resultSetContentPopUpMenu = new ResultSetContentPopUpMenu();
@@ -143,6 +150,8 @@ public class MainJFrame extends javax.swing.JFrame {
         mARCAdministrationClient.splashProgress(0);
         initComponents();
 
+        this.scriptsjList.setModel(new DefaultListModel() );
+        this.scriptsjList.setCellRenderer(new MyListCellRenderer() );
         MyPropertyChangeListener lst = new MyPropertyChangeListener();
         lst.frame = this;
         this.MainWindowjSplitPane.addPropertyChangeListener(JSplitPane.DIVIDER_LOCATION_PROPERTY, 
@@ -425,10 +434,18 @@ this.tasksjTable.setShowVerticalLines(true);
             }
         };
         ScriptsjInternalFrame = new javax.swing.JInternalFrame();
+        jSplitPane2 = new javax.swing.JSplitPane();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        scriptsjList = new javax.swing.JList();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane32 = new javax.swing.JScrollPane();
         ScriptjTextArea = new javax.swing.JTextArea();
         runScriptjButton = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        LoadScriptjMenuItem = new javax.swing.JMenuItem();
+        SaveScriptjMenuItem = new javax.swing.JMenuItem();
         ResultsjInternalFrame = new javax.swing.JInternalFrame();
         jScrollPane30 = new javax.swing.JScrollPane();
         RSstackjSplitPane = new javax.swing.JSplitPane();
@@ -2290,19 +2307,34 @@ this.tasksjTable.setShowVerticalLines(true);
             .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 1600, Short.MAX_VALUE)
         );
 
+        ScriptsjInternalFrame.setIconifiable(true);
+        ScriptsjInternalFrame.setMaximizable(true);
+        ScriptsjInternalFrame.setResizable(true);
         ScriptsjInternalFrame.setTitle("Scripts");
-        ScriptsjInternalFrame.setPreferredSize(new java.awt.Dimension(357, 65));
+        ScriptsjInternalFrame.setPreferredSize(new java.awt.Dimension(357, 340));
         ScriptsjInternalFrame.setVisible(true);
 
-        jPanel3.setPreferredSize(new java.awt.Dimension(341, 59));
+        jSplitPane2.setDividerLocation(206);
 
-        jScrollPane32.setPreferredSize(new java.awt.Dimension(146, 30));
+        scriptsjList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        scriptsjList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                scriptsjListMouseReleased(evt);
+            }
+        });
+        jScrollPane34.setViewportView(scriptsjList);
+
+        jSplitPane2.setLeftComponent(jScrollPane34);
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(341, 336));
+
+        jScrollPane32.setPreferredSize(new java.awt.Dimension(146, 307));
 
         ScriptjTextArea.setColumns(20);
         ScriptjTextArea.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         ScriptjTextArea.setLineWrap(true);
         ScriptjTextArea.setRows(5);
-        ScriptjTextArea.setPreferredSize(new java.awt.Dimension(164, 29));
+        ScriptjTextArea.setPreferredSize(new java.awt.Dimension(164, 307));
         jScrollPane32.setViewportView(ScriptjTextArea);
 
         runScriptjButton.setText("Run");
@@ -2312,33 +2344,63 @@ this.tasksjTable.setShowVerticalLines(true);
             }
         });
 
+        jButton3.setText("Add Script");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton3MouseReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+            .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(runScriptjButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(runScriptjButton)
-                .addGap(0, 7, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(runScriptjButton)
+                    .addComponent(jButton3))
+                .addGap(2, 2, 2))
         );
+
+        jSplitPane2.setRightComponent(jPanel3);
+
+        jMenu1.setText("File");
+
+        LoadScriptjMenuItem.setText("Load");
+        jMenu1.add(LoadScriptjMenuItem);
+
+        SaveScriptjMenuItem.setText("Save");
+        SaveScriptjMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveScriptjMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(SaveScriptjMenuItem);
+
+        jMenuBar1.add(jMenu1);
+
+        ScriptsjInternalFrame.setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout ScriptsjInternalFrameLayout = new javax.swing.GroupLayout(ScriptsjInternalFrame.getContentPane());
         ScriptsjInternalFrame.getContentPane().setLayout(ScriptsjInternalFrameLayout);
         ScriptsjInternalFrameLayout.setHorizontalGroup(
             ScriptsjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
         ScriptsjInternalFrameLayout.setVerticalGroup(
             ScriptsjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+            .addComponent(jSplitPane2)
         );
 
         ResultsjInternalFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -2889,7 +2951,7 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2903,7 +2965,7 @@ this.tasksjTable.setShowVerticalLines(true);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addComponent(CtxStackAndContentjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addComponent(CtxStackAndContentjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                 .addGap(6, 6, 6))
         );
         jPanel12Layout.setVerticalGroup(
@@ -3127,7 +3189,7 @@ this.tasksjTable.setShowVerticalLines(true);
             ContextsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContextsjPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ContextsStackjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE))
+                .addComponent(ContextsStackjSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE))
         );
         ContextsjPanelLayout.setVerticalGroup(
             ContextsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5987,7 +6049,11 @@ this.tasksjTable.setShowVerticalLines(true);
             return;
             
         }
-        
+        if (this.ScriptjTextArea.getText().isEmpty() )
+        {
+             this.Updatelog("script is empty. Aborting \n");
+            return;           
+        }
         ProcessContextActionWorker w = new ProcessContextActionWorker();
         w._frame = this;
         w.script = this.ScriptjTextArea.getText();
@@ -6000,6 +6066,97 @@ this.tasksjTable.setShowVerticalLines(true);
         
     }//GEN-LAST:event_runScriptjButtonMouseReleased
 
+    private void SaveScriptjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveScriptjMenuItemActionPerformed
+
+    String path = Settings.SettingsPath+File.separator+"scripts";    
+    File scripts_dir = new File(path);
+    if ( !scripts_dir.exists() )
+    {
+        scripts_dir.mkdir();
+    }
+    
+    JFileChooser chooser = new JFileChooser();
+    chooser.setCurrentDirectory(scripts_dir);
+    int res = chooser.showSaveDialog(this);
+    if ( res == JFileChooser.APPROVE_OPTION)
+    {
+        File saveFile = chooser.getSelectedFile();
+        if ( saveFile.exists())
+        {
+            saveFile.delete();
+        }
+        BufferedWriter writer = null;
+        try
+        {
+        saveFile.createNewFile();
+        writer = new BufferedWriter(new FileWriter(saveFile));
+        writer.write(this.ScriptjTextArea.getText());
+        }
+        catch(Exception e)
+        {
+            this.Updatelog("unable to write file '"+saveFile.getPath()+"'. "+e.getMessage()+"\n");
+        }
+        
+    }
+    
+    
+    }//GEN-LAST:event_SaveScriptjMenuItemActionPerformed
+
+    private void jButton3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseReleased
+
+        if ( this.ScriptjTextArea.getText().isEmpty() )
+        {
+            this.Updatelog("nothing to add. script is empty. Aborting \n");
+            return;
+        }
+        AddScriptJDialog d = new AddScriptJDialog();
+        d.setLocation(evt.getX()+ 5, evt.getY()+5);
+        d.setModal(true);
+        d.setVisible(true);
+        if (d.state.equals("Ok"))
+        {
+            Script script = new Script();
+            script.content = this.ScriptjTextArea.getText();
+            script.name = d.name;
+            DefaultListModel m = (DefaultListModel) this.scriptsjList.getModel();
+            m.addElement(script);
+        }
+    }//GEN-LAST:event_jButton3MouseReleased
+
+    private void scriptsjListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scriptsjListMouseReleased
+        
+       if( evt.getButton() == MouseEvent.BUTTON1 )
+       {
+           DefaultListModel m = (DefaultListModel) this.scriptsjList.getModel();
+           int index = this.scriptsjList.locationToIndex(new Point(evt.getX(),evt.getY()));
+           if (index != -1 )
+           {
+               if ( CurrentScript != null )
+               {
+                   CurrentScript.content = this.ScriptjTextArea.getText();
+               }
+               CurrentScript = (Script) m.getElementAt(index);
+               this.ScriptjTextArea.setText(CurrentScript.content);
+           }
+           
+       }
+        if ( evt.getButton() == MouseEvent.BUTTON3)
+        {
+            RemoveScriptPopUpMenu m = new RemoveScriptPopUpMenu();
+            m.show(this.scriptsjList, evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_scriptsjListMouseReleased
+
+        public void RemoveScript(int x, int y)
+        {
+            int index = this.scriptsjList.locationToIndex( new Point(x,y) );
+            if( index  != -1)
+            {
+               DefaultListModel m = (DefaultListModel) this.scriptsjList.getModel(); 
+               m.remove(index);
+            }
+        }
+    
     public void Updatelog(String msg) {
         if (msg == null || msg.isEmpty()) {
             return;
@@ -7670,7 +7827,8 @@ this.tasksjTable.setShowVerticalLines(true);
             }
             i++;
         }
-        
+        m = (DefaultTableModel) this.ContextContentjTable.getModel();
+        m.setRowCount(0);
         CurrentSession.PopSelectedContexts();
     }
 
@@ -8485,6 +8643,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JPanel KnowledgeGraphjPanel;
     public javax.swing.JSplitPane LDBTreesjSplitPane;
     public javax.swing.JTable LastDBInfojTable;
+    private javax.swing.JMenuItem LoadScriptjMenuItem;
     private javax.swing.JInternalFrame LogjInternalFrame;
     private javax.swing.JTextArea LogjTextArea;
     private javax.swing.JPanel MTPanel;
@@ -8520,6 +8679,7 @@ this.tasksjTable.setShowVerticalLines(true);
     public javax.swing.JComboBox ResultsUniqueByFieldjComboBox;
     private javax.swing.JPanel ResultsUniqueByjPanel;
     private javax.swing.JInternalFrame ResultsjInternalFrame;
+    private javax.swing.JMenuItem SaveScriptjMenuItem;
     private javax.swing.JTextArea ScriptjTextArea;
     private javax.swing.JInternalFrame ScriptsjInternalFrame;
     public javax.swing.JComboBox SelectFromTableFieldjComboBox;
@@ -8563,6 +8723,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton7;
     private javax.swing.JCheckBox jCheckBox1;
@@ -8582,6 +8743,8 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -8637,6 +8800,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JScrollPane jScrollPane31;
     private javax.swing.JScrollPane jScrollPane32;
     private javax.swing.JScrollPane jScrollPane33;
+    private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -8646,6 +8810,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane17;
     private javax.swing.JSplitPane jSplitPane18;
+    private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JSplitPane jSplitPane5;
     public javax.swing.JTextField jTextField8;
     private javax.swing.JTextArea logjTextArea;
@@ -8670,6 +8835,7 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JTextField relationsjTextField;
     private javax.swing.JCheckBox restartjCheckBox;
     private javax.swing.JButton runScriptjButton;
+    private javax.swing.JList scriptsjList;
     public javax.swing.JComboBox selectToTableDestinationTableNamejComboBox;
     private javax.swing.JLabel shapesjLabel;
     private javax.swing.JTextField shapesjTextField;
