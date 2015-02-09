@@ -49,7 +49,9 @@ import javax.xml.transform.TransformerException;
 import mARC.Connector.*;
 import javax.swing.JFileChooser;
 import java.io.BufferedWriter;
+import java.io.BufferedReader;
 import java.io.FileWriter;
+import java.io.FileReader;
 import javax.swing.DefaultListModel;
 /**
  *
@@ -2378,6 +2380,11 @@ this.tasksjTable.setShowVerticalLines(true);
         jMenu1.setText("File");
 
         LoadScriptjMenuItem.setText("Load");
+        LoadScriptjMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoadScriptjMenuItemActionPerformed(evt);
+            }
+        });
         jMenu1.add(LoadScriptjMenuItem);
 
         SaveScriptjMenuItem.setText("Save");
@@ -6091,6 +6098,20 @@ this.tasksjTable.setShowVerticalLines(true);
         saveFile.createNewFile();
         writer = new BufferedWriter(new FileWriter(saveFile));
         writer.write(this.ScriptjTextArea.getText());
+        writer.close();
+        DefaultListModel m = (DefaultListModel ) this.scriptsjList.getModel();
+        for (int i = 0; i < m.size();i++)
+        {
+            Script sss = (Script) m.get(i);
+            if ( sss.name.equals(saveFile.getName()))
+            {
+                return;
+            }
+        }
+        Script s = new Script();
+        s.name = saveFile.getName();
+        s.content = this.ScriptjTextArea.getText();
+        m.addElement(s);
         }
         catch(Exception e)
         {
@@ -6146,6 +6167,58 @@ this.tasksjTable.setShowVerticalLines(true);
             m.show(this.scriptsjList, evt.getX(), evt.getY());
         }
     }//GEN-LAST:event_scriptsjListMouseReleased
+
+    private void LoadScriptjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadScriptjMenuItemActionPerformed
+
+        
+            String path = Settings.SettingsPath+File.separator+"scripts";    
+    File scripts_dir = new File(path);
+    if ( !scripts_dir.exists() )
+    {
+        scripts_dir = new File(Settings.SettingsPath);
+    }
+    
+    JFileChooser chooser = new JFileChooser();
+    chooser.setCurrentDirectory(scripts_dir);
+    int res = chooser.showOpenDialog(this);
+    if ( res == JFileChooser.APPROVE_OPTION)
+    {
+        File fileToLoad = chooser.getSelectedFile();
+        FileReader in = null;
+        
+        try
+        {
+            in = new FileReader(fileToLoad);
+        }
+        catch(Exception e)
+        {
+            this.Updatelog("unable to read file '"+fileToLoad.getPath()+"'. "+e.getMessage()+"\n");
+            return ;
+        }
+    BufferedReader br = new BufferedReader(in);
+    String line ="";
+    String script = "";
+    try
+    {
+        while ((line = br.readLine()) != null) 
+        {
+        script += line+"\n";
+        }
+    }
+    catch(Exception e)
+    {
+        this.Updatelog("error occurred while reading file '"+fileToLoad.getPath()+"'. "+e.getMessage()+"\n");
+        return ;
+    }
+    
+    Script s = new Script();
+    s.name = fileToLoad.getName();
+    s.content = script;
+    DefaultListModel m = (DefaultListModel)  this.scriptsjList.getModel();
+    m.addElement(s);
+    }
+     
+    }//GEN-LAST:event_LoadScriptjMenuItemActionPerformed
 
         public void RemoveScript(int x, int y)
         {
