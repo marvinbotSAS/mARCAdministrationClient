@@ -421,9 +421,14 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
                 script += session.connector.RawScript+"\n";
                 break;
             case "ContextToInhibitor":
-                session.connector.directExecute = true;
+                session.connector.directExecute = false;
                 session.connector.openScript(null);
-                session.connector.SESSION_ContextToInhibitor();
+                for (int row : rows)
+                {
+                    session.connector.CONTEXTS_OnTop(String.valueOf(row + 1));
+                    session.connector.SESSION_ContextToInhibitor();
+                }
+                session.connector.executeScript();
                 if ( session.connector.result.mError )
             {
                 this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
@@ -444,9 +449,14 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
                 script += session.connector.RawScript+"\n";
                 break;
             case "ContextToProfiler":
-                session.connector.directExecute = true;
+                session.connector.directExecute = false;
                 session.connector.openScript(null);
-                session.connector.SESSION_ContextToProfiler();
+                for (int row : rows)
+                {
+                    session.connector.CONTEXTS_OnTop(String.valueOf(row + 1));
+                    session.connector.SESSION_ContextToProfiler();
+                }
+                session.connector.executeScript();
                 if ( session.connector.result.mError )
             {
                 this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
