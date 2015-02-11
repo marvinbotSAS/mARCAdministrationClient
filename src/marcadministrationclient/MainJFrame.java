@@ -276,12 +276,13 @@ this.tasksjTable.setShowVerticalLines(true);
         java.awt.GridBagConstraints gridBagConstraints;
 
         ServerCurrentSessionjInternalFrame = new javax.swing.JInternalFrame();
-        jScrollPane9 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         SessionPropertiesSpectrumjSplitPane = new javax.swing.JSplitPane();
         SessionPropertiesjPanel = new javax.swing.JPanel();
+        jScrollPane35 = new javax.swing.JScrollPane();
         SessionPropertiesjTable = new javax.swing.JTable();
         jPanel30 = new javax.swing.JPanel();
+        jScrollPane36 = new javax.swing.JScrollPane();
         SessionSpectrumjTable = new javax.swing.JTable();
         ClearSessionjButton = new javax.swing.JButton();
         TablesjInternalFrame = new javax.swing.JInternalFrame();
@@ -588,8 +589,6 @@ this.tasksjTable.setShowVerticalLines(true);
             }
         });
 
-        jScrollPane9.setMaximumSize(new java.awt.Dimension(526, 382));
-
         SessionPropertiesjPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Session Properties", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Agency FB", 0, 9))); // NOI18N
 
         SessionPropertiesjTable.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
@@ -631,23 +630,25 @@ this.tasksjTable.setShowVerticalLines(true);
                 SessionPropertiesjTableKeyReleased(evt);
             }
         });
+        jScrollPane35.setViewportView(SessionPropertiesjTable);
 
         javax.swing.GroupLayout SessionPropertiesjPanelLayout = new javax.swing.GroupLayout(SessionPropertiesjPanel);
         SessionPropertiesjPanel.setLayout(SessionPropertiesjPanelLayout);
         SessionPropertiesjPanelLayout.setHorizontalGroup(
             SessionPropertiesjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SessionPropertiesjTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         SessionPropertiesjPanelLayout.setVerticalGroup(
             SessionPropertiesjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SessionPropertiesjPanelLayout.createSequentialGroup()
-                .addComponent(SessionPropertiesjTable, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         SessionPropertiesSpectrumjSplitPane.setLeftComponent(SessionPropertiesjPanel);
 
         jPanel30.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Session Spectrum", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Agency FB", 0, 9))); // NOI18N
+        jPanel30.setAutoscrolls(true);
         jPanel30.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
 
         SessionSpectrumjTable.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
@@ -674,6 +675,7 @@ this.tasksjTable.setShowVerticalLines(true);
                 return canEdit [columnIndex];
             }
         });
+        SessionSpectrumjTable.setToolTipText("");
         SessionSpectrumjTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         SessionSpectrumjTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -690,22 +692,19 @@ this.tasksjTable.setShowVerticalLines(true);
                 SessionSpectrumjTableKeyReleased(evt);
             }
         });
+        jScrollPane36.setViewportView(SessionSpectrumjTable);
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
-            .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(SessionSpectrumjTable, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE))
+            .addComponent(jScrollPane36, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 324, Short.MAX_VALUE)
-            .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel30Layout.createSequentialGroup()
-                    .addComponent(SessionSpectrumjTable, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 19, Short.MAX_VALUE)))
+            .addGroup(jPanel30Layout.createSequentialGroup()
+                .addComponent(jScrollPane36, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         SessionPropertiesSpectrumjSplitPane.setRightComponent(jPanel30);
@@ -718,12 +717,8 @@ this.tasksjTable.setShowVerticalLines(true);
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(SessionPropertiesSpectrumjSplitPane)
-                .addGap(16, 16, 16))
+            .addComponent(SessionPropertiesSpectrumjSplitPane)
         );
-
-        jScrollPane9.setViewportView(jPanel8);
 
         ClearSessionjButton.setText("Clear Session");
         ClearSessionjButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -736,17 +731,22 @@ this.tasksjTable.setShowVerticalLines(true);
         ServerCurrentSessionjInternalFrame.getContentPane().setLayout(ServerCurrentSessionjInternalFrameLayout);
         ServerCurrentSessionjInternalFrameLayout.setHorizontalGroup(
             ServerCurrentSessionjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(ServerCurrentSessionjInternalFrameLayout.createSequentialGroup()
                 .addComponent(ClearSessionjButton)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 572, Short.MAX_VALUE))
+            .addGroup(ServerCurrentSessionjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ServerCurrentSessionjInternalFrameLayout.setVerticalGroup(
             ServerCurrentSessionjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ServerCurrentSessionjInternalFrameLayout.createSequentialGroup()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(330, Short.MAX_VALUE)
                 .addComponent(ClearSessionjButton))
+            .addGroup(ServerCurrentSessionjInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ServerCurrentSessionjInternalFrameLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(27, 27, 27)))
         );
 
         TablesjInternalFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -8874,12 +8874,13 @@ this.tasksjTable.setShowVerticalLines(true);
     private javax.swing.JScrollPane jScrollPane32;
     private javax.swing.JScrollPane jScrollPane33;
     private javax.swing.JScrollPane jScrollPane34;
+    private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane17;
     private javax.swing.JSplitPane jSplitPane18;
