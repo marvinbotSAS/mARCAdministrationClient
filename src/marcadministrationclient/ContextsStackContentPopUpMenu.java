@@ -50,9 +50,11 @@ public class ContextsStackContentPopUpMenu extends JPopupMenu implements ActionL
    JMenuItem ctxToctxItem = new JMenuItem("ContextToContext") ;
    JMenuItem amplifyItem = new JMenuItem("Amplify") ; 
    JMenuItem sortbyItem = new JMenuItem("SortBy") ;  
-    JMenuItem learnItem = new JMenuItem("Learn") ;
-   
-   
+   JMenuItem learnItem = new JMenuItem("Learn") ;
+   JMenuItem ctxToprofilerItem = new JMenuItem("ContextToProfiler") ;
+   JMenuItem ctxToinhibitorItem = new JMenuItem("ContextToInhibitor") ;
+   JMenuItem profilerToctxItem = new JMenuItem("ProfilerToContext") ;
+   JMenuItem inhibitorToctxItem = new JMenuItem("InhibitorToContext") ;   
    int row,column; 
    
    public MainJFrame _frame;
@@ -96,6 +98,16 @@ public class ContextsStackContentPopUpMenu extends JPopupMenu implements ActionL
         splitItem.addActionListener( this );
         add(learnItem);
         learnItem.addActionListener( this );
+        
+        add(ctxToprofilerItem); 
+        ctxToprofilerItem.addActionListener( this );
+        add(ctxToinhibitorItem); 
+        ctxToinhibitorItem.addActionListener( this );
+        add(profilerToctxItem); 
+        profilerToctxItem.addActionListener( this );
+        add(inhibitorToctxItem);
+        inhibitorToctxItem.addActionListener( this );
+        
     }
   
     @Override
@@ -172,7 +184,24 @@ public void actionPerformed( ActionEvent e )
              else if ( e.getActionCommand().equals(this.learnItem.getActionCommand() ) )
              {
                  _frame.ContextLearn();
-             }          
+             }
+             else if (e.getActionCommand().equals(ctxToprofilerItem.getActionCommand()))
+             {
+                 _frame.ContextToProfiler();
+             }
+             else if (e.getActionCommand().equals(ctxToinhibitorItem.getActionCommand()))
+             {
+                 _frame.ContextToInhibitor();
+             }
+             else if (e.getActionCommand().equals(profilerToctxItem.getActionCommand()))
+             {
+                 _frame.ProfilerToContext();
+             }
+             else if (e.getActionCommand().equals(inhibitorToctxItem.getActionCommand()))
+             {
+                 _frame.InhibitorToContext();
+             } 
+        
 
 }
               
