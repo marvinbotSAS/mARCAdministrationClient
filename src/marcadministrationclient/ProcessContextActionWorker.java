@@ -421,13 +421,9 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
                 script += session.connector.RawScript+"\n";
                 break;
             case "ContextToInhibitor":
-                session.connector.directExecute = false;
+                session.connector.directExecute = true;
                 session.connector.openScript(null);
-                for (int row : rows)
-                {
-                    session.connector.CONTEXTS_OnTop(String.valueOf(row + 1));
-                    session.connector.SESSION_ContextToInhibitor();
-                }
+                session.connector.SESSION_ContextToInhibitor();
                 if ( session.connector.result.mError )
             {
                 this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
@@ -448,13 +444,9 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
                 script += session.connector.RawScript+"\n";
                 break;
             case "ContextToProfiler":
-                session.connector.directExecute = false;
+                session.connector.directExecute = true;
                 session.connector.openScript(null);
-                for (int row : rows)
-                {
-                    session.connector.CONTEXTS_OnTop(String.valueOf(row + 1));
-                    session.connector.SESSION_ContextToProfiler();
-                }
+                session.connector.SESSION_ContextToProfiler();
                 if ( session.connector.result.mError )
             {
                 this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
@@ -780,6 +772,21 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             }
             
         }
+        // on maj les properties de la session
+        
+        session.connector.directExecute = true;
+        session.connector.openScript(null);
+        session.connector.SESSION_GetProperties("");
+        if ( session.connector.result.mError )
+        {
+            this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
+        //    session.connector.UnLock();
+            return null;
+        }
+        script += session.connector.RawScript+"\n";
+        // on recupere le nombre de contexts sur la pile 
+        session.values = session.connector.getDataByName("prop_value", -1);
+        
         }
         catch(Exception e)
         {
@@ -849,6 +856,10 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             {
                 _frame.ShowResulSetStack();
             }
+            
+        this._frame.UpdateCurrentSessionProperties();
+        
+        
         } catch (InterruptedException ex) {
             Logger.getLogger(ProcessContextActionWorker.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ExecutionException ex) {
