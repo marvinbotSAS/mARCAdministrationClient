@@ -162,7 +162,11 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
              //       session.connector.UnLock();
                     return null;
                 }   
-                script += session.connector.RawScript+"\n";       
+                
+                script += session.connector.RawScript+"\n";   
+                fetchContent = true;
+                this.contextIndex = 0;
+                fetchAll = true;
                 break;
             case "ClearSession":
                 fetchAll = true;

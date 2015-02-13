@@ -57,7 +57,7 @@ public class Settings {
     public static String BasefileName = "mARCAdministrationClientSettings";
     private static ArrayList<Server> servers = new ArrayList<>();
     
-    public static String SettingsPath =  System.getProperty("user.dir");
+     public static String SettingsPath =  System.getProperty("user.dir");
          
     public static File settingsFolder = new File(SettingsPath);
     

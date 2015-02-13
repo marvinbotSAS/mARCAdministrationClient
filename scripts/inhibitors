@@ -1,0 +1,14 @@
+session.clear();
+SESSION.StringToContext(<6 orange/> , <5 false/> );
+session.contextTocontext();
+contexts.ontop(<5 ctx_1/>);
+contexts.dup(<1 1/>);
+contexts.setproperties(<17 name = inhibitor1/>);
+contexts.ontop(<7 shapes/>);
+contexts.dup(<1 1/>);
+contexts.setproperties(<17 name = inhibitor2/>);
+contexts.ontop(<10 inhibitor1/>);
+contexts.ontop(<10 inhibitor2/>);
+contexts.union(<1 1/>, <6 simple/>);
+contexts.setproperties(<17 name = inhibitors/>);
+contexts.contextToinhibitor();
