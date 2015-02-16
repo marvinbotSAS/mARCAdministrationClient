@@ -534,6 +534,11 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
                     this.spectrum_values = session.connector.getDataByName("value",1);
                     this.getSpectrum = true;
                     this.getproperties = true;
+                    if ( Session.spectrum_names == null )
+                    {
+                        Session.spectrum_names = session.connector.getDataByName("name", 1);
+                        Session.spectrum_types = session.connector.getDataByName("type", 1);
+                    }
                 }
                 else
                 {
@@ -796,6 +801,12 @@ public class ProcessContextActionWorker extends SwingWorker<Void,Void>
             this.logMsg +=" ERROR occured command was '"+session.connector.getToSend()+"'  server answer is '"+session.connector.result.mErrorMessage+"' \n";
         //    session.connector.UnLock();
             return null;
+        }
+        if ( Session.properties == null )
+        {
+            Session.properties = session.connector.getDataByName("prop_name", 0);
+            Session.types = session.connector.getDataByName("prop_type", 0);
+            Session.prop_access = session.connector.getDataByName("prop_access", 0);
         }
         script += session.connector.RawScript+"\n";
         // on recupere le nombre de contexts sur la pile 
