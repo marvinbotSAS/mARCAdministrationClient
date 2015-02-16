@@ -11,4 +11,4 @@ contexts.ontop(<10 inhibitor1/>);
 contexts.ontop(<10 inhibitor2/>);
 contexts.union(<1 1/>, <6 simple/>);
 contexts.setproperties(<17 name = inhibitors/>);
-contexts.contextToinhibitor();
+session.contextToinhibitor();

@@ -4280,6 +4280,8 @@ this.tasksjTable.setShowVerticalLines(true);
         this.ShownContextIndex = contextIndex;
         w.Action = "ShowOneContextProperties";
         w.session = CurrentSession;
+        w.getSpectrum = true;
+        w.getproperties = true;
         w._frame = this;
         w.contextIndex = contextIndex;
         CurrentContext = CurrentSession.contextsStack.stack.get(w.contextIndex);
