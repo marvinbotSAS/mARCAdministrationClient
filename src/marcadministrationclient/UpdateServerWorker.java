@@ -228,7 +228,14 @@ public class UpdateServerWorker extends SwingWorker<Void,Void>
              server.tasks.removeAll(server.tasksToRemove);
              server.tasksToRemove.clear();
         }
+        try
+        {
         UpdateTablesStats();
+        }
+        catch(Exception e)
+        {
+            
+        }
         connector.disConnect();
         }
         catch(Exception e)
