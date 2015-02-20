@@ -3720,14 +3720,14 @@ this.tasksjTable.setShowVerticalLines(true);
         ServersTree.setAutoscrolls(true);
         ServersTree.setMaximumSize(new java.awt.Dimension(59, 54));
         ServersTree.setPreferredSize(new java.awt.Dimension(59, 54));
-        ServersTree.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                ServersTreeMouseMoved(evt);
-            }
-        });
         ServersTree.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 ServersTreeMouseReleased(evt);
+            }
+        });
+        ServersTree.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                ServersTreeMouseMoved(evt);
             }
         });
         jScrollPane1.setViewportView(ServersTree);
