@@ -57,7 +57,7 @@ public class TableWorker extends SwingWorker<Void,Void>
        server.connector.openScript(null);
        if ( Action.equals("Create"))
        {
-           server.connector.TABLE_Create(tablename, "NULL", "NULL", "100000", field);
+           server.connector.TABLE_Create(tablename, "NULL", "100000", "MASTER", field);
        }
        else if (Action.equals("Kill"))
        {
